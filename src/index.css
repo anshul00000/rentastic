@@ -7,9 +7,9 @@ p{
   margin: 0;
 }
 :root {
-  --bgcolor: rgb(0, 0, 0);
+  --bgcolor: rgb(255, 255, 255);
   /* --bgcolor : rgb(0, 0, 0) ; */
-  --textcolor: rgb(255, 255, 255);
+  --textcolor: rgb(0, 0, 0);
   /* --boxshadow : rgb(0, 255, 229); */
   --boxshadow: rgb(251, 251, 251);
 }
