@@ -10,10 +10,20 @@
 </head>
 <body>
 <style>
+
+
+:root {
+    --bgcolor: #dde1e7;
+    --textcolor: rgb(0, 0, 0);
+    --boxshadow: rgb(0, 0, 0);
+    /* --buttoncolor : rgb(238, 0, 255) ; */
+  }
+  
+
 *{
     margin: 0;
     padding: 0;
-    color: white;
+    color: var(--textcolor);
 
 }
 .hai{
@@ -259,7 +269,7 @@ $num=mysqli_num_rows($queryy);
       <a class="navbar-brand brand_name" href="index.php">RENTASTIC</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon navbar-dark"></span>
+        <span class="navbar-toggler-icon "></span>
       </button>
       <div class="offcanvas bg-transparent offcanvas-end" tabindex="-1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">

@@ -17,12 +17,21 @@
   box-sizing: border-box;
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+:root {
+    --bgcolor: #dde1e7;
+    --textcolor: rgb(0, 0, 0);
+    --boxshadow: rgb(0, 0, 0);
+    /* --buttoncolor : rgb(238, 0, 255) ; */
+  }
+  
+
 body{
-   background-color: rgb(2, 14, 37);
+   background-color: var(--bgcolor);
 }
 .hai{
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0)50%, rgba(0,0,0,0)50%),url("../images/carbg2.jpg");
+    /* background: linear-gradient(to top, rgba(0,0,0,0)50%, rgba(0,0,0,0)50%),url("../images/carbg2.jpg"); */
     background-position: center;
     background-size: cover;
     height: 109vh;
@@ -30,7 +39,7 @@ body{
 }
 .main{
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0)50%, rgba(0,0,0,0)50%);
+    /* background: linear-gradient(to top, rgba(0,0,0,0)50%, rgba(0,0,0,0)50%); */
     /* background-color: red; */
     background-position: center;
  
@@ -85,7 +94,12 @@ ul li a{
   
     border-radius: 5px 5px 0 0;
     overflow: hidden;
-    box-shadow:0 0  20px rgba(0,0,0,0.15);
+    /* box-shadow:0 0  20px var(--textcolor); */
+
+
+    box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993 , -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993;
+
+
     /* margin-left : 350px ; */
     margin-top: 25px;
     width: 800px;
@@ -100,11 +114,14 @@ ul li a{
     overflow: auto;
     /* margin-bottom: 2000px ; */
 }
+
+
 .content-table thead tr{
     /* background-color: darkslategray; */
+    /* background-color: red; */
     background-color: darkcyan;
 
-    color: white;
+    color: var(--textcolor);
     text-align: left;
 }
 
@@ -121,7 +138,7 @@ ul li a{
 
 .content-table tbody tr{
     border-bottom: 1px solid #dddddd;
-    color: white;
+    color: var(--textcolor);
 
 }
 .content-table tbody tr:nth-of-type(even){
@@ -144,7 +161,7 @@ ul li a{
   margin: auto;
   margin-top: 100px;
     /* margin-left: 650px; */
-    color: white;
+    color: var(--textcolor);
     background-color: rgba(105, 105, 105, 0.33);
 
  
@@ -161,7 +178,7 @@ ul li a{
     font-size: 18px;
     border-radius: 10px;
     cursor: pointer;
-    color:white;
+    color:var(--textcolor);
     transition: 0.4s ease;
 
 }
@@ -197,7 +214,7 @@ $num=mysqli_num_rows($queryy);
       <a class="navbar-brand brand_name" href="index.php">RENTASTIC</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon navbar-dark"></span>
+        <span class="navbar-toggler-icon "></span>
       </button>
       <div class="offcanvas bg-transparent offcanvas-end" tabindex="-1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">

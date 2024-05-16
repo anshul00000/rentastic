@@ -30,7 +30,8 @@
 </head>
 <body>
 
-
+<div class="holo"></div>
+<div class="holo2"></div>
 <?php
 require_once('connection.php');
     if(isset($_POST['login']))
@@ -102,7 +103,7 @@ require_once('connection.php');
       <a class="navbar-brand brand_name" href="index.php">RENTASTIC</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon navbar-dark"></span>
+        <span class="navbar-toggler-icon "></span>
       </button>
       <div class="offcanvas bg-transparent offcanvas-end" tabindex="-1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">
@@ -149,11 +150,12 @@ require_once('connection.php');
   <div class="main_hero">
     <div class="main_hero2_1">
       <!-- <h1>hyyy</h1>  -->
-      <h1 class="y_r">Your <span style=color:lightyellow>ride</span> </h1>
-      <h1 class="y_w">Your <span style=color:lightpink>way.</span> </h1>
+      <h1 class="y_r">Your <span style=color:orange>ride</span> </h1>
+      <h1 class="y_w">Your <span style="color:black;">way.</span> </h1>
       <a href="dashbord.php">
       <button class="btn" type="submit">
-      View Cars ->
+      View Cars -> 
+      <!-- <img class="btn_img" src="public/rocket.gif" alt="ll"> -->
       </button>
       </a>
      
@@ -185,31 +187,62 @@ require_once('connection.php');
   </div>
 
 
-        <!-- <div class="content">
-            <h1>Rent Your <br><span>Dream Car</span></h1>
-            <p class="par">Live the life of Luxury.<br>
-                Just rent a car of your wish from our vast collection.<br>Enjoy every moment with your family<br>
-                 Join us to make this family vast.  </p>
-            <button class="cn"><a href="register.php">JOIN US</a></button>
-            <div class="form">
-                <h2>Login Here</h2>
-                <form method="POST"> 
-                <input type="email" name="email" placeholder="Enter Email Here" >
-                <input type="password" name="pass" placeholder="Enter Password Here">
-                <input class="btnn" type="submit" value="Login" name="login"></input>
-                </form>
-                <p class="link">Don't have an account?<br>
-                <a href="register.php">Sign up</a> here</a></p>
-                <p class="liw">or<br>Log in with</p>
-                <div class="icon">
-                    &emsp;&emsp;&emsp;&ensp;<a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon> </a>&nbsp;&nbsp;
-                    <a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon> </a>&ensp;
-                    <a href="https://myaccount.google.com/"><ion-icon name="logo-google"></ion-icon> </a>&ensp;
+  <?php 
+    require_once('connection.php');
+   
+    $sql2="select *from cars where AVAILABLE='Y'";
+    $cars= mysqli_query($con,$sql2);
+    
+    // $row=mysqli_fetch_assoc($cars);
+        
+    
+    ?>
+
+
+
+  <div class="about_cards">
+
+  <?php
+        while($result= mysqli_fetch_array($cars))
+        {
+            // echo $result['CAR_ID'];
+            // echo $result['AVAILABLE'];
+            
+    ?>  
+
+  <div class="about_card_div">
+            <div class="about_card">
+                <div class="about_card_img">
+
+                    <img src="images/<?php echo $result['CAR_IMG']?>" alt="mycar">
+                </div>
+                <!-- <form method="POST"> -->
+                   
+             <?php $res=$result['CAR_ID'] ; ?>
+
+                <div class="card_text">
+                    <div> <p><?php echo $result['CAR_NAME']?></p> <p>CAPACITY : <?php echo $result['CAPACITY']?></p> </div>
+                   <div> 
+                    
+                    <p>Fuel Type : <?php echo $result['FUEL_TYPE']?></p>
+                    <p>Rent Per Day : ₹<?php echo $result['PRICE']?>/-</p></div>
                     
                 </div>
+
+                <!-- <button class="btn" type="button">view car</button> -->
+            <a class="btn" type="submit" name="booknow" class="utton" href="booking.php?id=<?php echo $res;?>">Book</a>
+            
+                <!-- </form> -->
             </div>
-        </div>
-    </div> -->
+            </div>
+            <?php
+        }
+    
+    ?>
+          </div>
+
+
+       <!-- <div class="demo_div"></div> -->
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -1,0 +1,10 @@
+1 . add cart  
+2 . details dashboard 
+3 . car details page and add details to car cetails card
+4 . booking data like prise or more … 
+5 . update booking status page to see all cars 
+6 . admin register form 
+7 . update admin dashboard 
+8 . sending notification to approve a car and same return 
+9 . add update form in vehicle management to update cars
+10 . change colour and over all ………….

@@ -1,17 +1,28 @@
 
+:root {
+    --bgcolor: #dde1e7;
+    --textcolor: rgb(0, 0, 0);
+    --boxshadow: rgb(0, 0, 0);
+    /* --buttoncolor : rgb(238, 0, 255) ; */
+  }
+
+
 body {
-	background: url(/images/fb.jpg);
+	/* background: url(/images/fb.jpg); */
 	background-position: center;
 	background-size:cover;
 	background-repeat: no-repeat;
 }
-html,
-body {
+html, body {
 	height: 100%;
 }
+
+
+
+
 .imagebg {
 	
-	background-color: #fff;
+	background-color: var(--bgcolor);
 	/* background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover ;
@@ -30,7 +41,7 @@ body {
 }
 .form-container
 {
-	background-color:white;
+	background-color:var(--bgcolor);
     box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 20px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
     border-radius: 8px;	
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
@@ -40,7 +51,7 @@ body {
 .btn a{
 	
 	text-decoration: none;
-    color: black;
+    color: var(--textcolor);
     font-weight: bold;
 }
 

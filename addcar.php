@@ -8,19 +8,23 @@
 </head>
 <body>
 <style>
+
+:root {
+    --bgcolor: #dde1e7;
+    --textcolor: rgb(0, 0, 0);
+    --boxshadow: rgb(0, 0, 0);
+    /* --buttoncolor : rgb(238, 0, 255) ; */
+  }
+  
+
 *{
     margin: 0;
     padding: 0;
 
 }
 body{
-    background-image: url("../images/regs.jpg");
-    
-    
-    background-size: cover;
-    background-position: center;
-    /* margin-top: 0px; */
-    
+    background-color: var(--bgcolor);
+      
 }
 .main{
     width: 400px;
@@ -30,14 +34,14 @@ body{
 .btnn{
     width: 240px;
     height: 40px;
-    background: #ff7200;
+    background: black;
     border:none;
     margin-top: 30px;
     margin-left: 40px;
     font-size: 18px;
     border-radius: 10px;
     cursor: pointer;
-    color:#fff;
+    color:var(--bgcolor);
     transition: 0.4s ease;
 }
 
@@ -48,7 +52,7 @@ body{
 
 .btnn a{
     text-decoration: none;
-    color: black;
+    color: var(--textcolor);
     font-weight: bold;
 }
 
@@ -59,13 +63,15 @@ h2{
 
 }
 .register{
-    background-color: rgba(0,0,0,0.6);
+    background-color: var(--bgcolor);
     width: 100%;
     font-size: 18px;
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.3);
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
-    color: #fff;
+    /* box-shadow: 2px 2px 15px rgba(0,0,0,0.3); */
+    box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993;
+
+    color: var(--textcolor);
     margin: auto;
 
 }
@@ -88,15 +94,18 @@ input#name{
     border-radius: 3px;
     outline: 0;
     padding: 7px;
-    background-color: #fff;
-    box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3);
+    background-color: var(--bgcolor);
+    /* box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3); */
+    /* box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993; */
+    box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993;
+    
 }
 
 
 #back{
     width: 100px;
     height: 40px;
-    background: #ff7200;
+    background:  var(--textcolor);
     border:none;
     margin-top: 10px;
     margin-left: 20px;
@@ -110,10 +119,11 @@ input#name{
     text-decoration: none;
     color: black;
     font-weight: bold;
+    color: var(--bgcolor);
 }
 
 #fam{
-    color: #ff7200;
+    color: var(--textcolor);
     font-family: 'Times New Roman';
     font-size: 50px;
     padding-left: 20px;

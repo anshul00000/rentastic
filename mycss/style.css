@@ -4,11 +4,10 @@
     box-sizing: border-box;
   }
   :root {
-    --bgcolor: rgb(2, 14, 37);
-    /* --bgcolor : rgb(0, 0, 0) ; */
-    --textcolor: rgb(255, 255, 255);
-    /* --boxshadow : rgb(0, 255, 229); */
-    --boxshadow: rgb(251, 251, 251);
+    --bgcolor: #dde1e7;
+    --textcolor: rgb(0, 0, 0);
+    --boxshadow: rgb(0, 0, 0);
+    /* --buttoncolor : rgb(238, 0, 255) ; */
   }
   
   ::-webkit-scrollbar {
@@ -19,10 +18,11 @@
   
   ::-webkit-scrollbar-track{
     background:var(--bgcolor);
+    /* background-color: red; */
   }
   ::-webkit-scrollbar-thumb {
   
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     border-radius: 50px;
   
   }
@@ -30,25 +30,29 @@
   
   
   body{
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    overflow-x: hidden;
     /* background-image: url("https://wallpapers.com/images/featured/night-sky-moon-bdlgkile5f7jt8bl.jpg"); */
     /* background-repeat: no-repeat; */
     /* background-size: cover; */
-    background-color: rgb(2, 14, 37);
+    background-color: var(--bgcolor);
+    /* background-color: black; */
+     /* color: black !important; */
   }
   
   
   .fullnav{
     /* background-color: red; */
-    position: absolute;
-    z-index: 998;
-    top: 0;
-    left: 0;
+    /* position: absolute; */
+    /* z-index: 998; */
+    top: 0px !important;
+    left: 0px !important;
     width: 100%;
     height: 55px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter:blur(10px) ;
+    /* backdrop-filter: blur(10px); */
+    /* -webkit-backdrop-filter:blur(10px) ; */
   }
   .navbaarrr {
     box-shadow: 0px 0px 2px var(--boxshadow) !important;
@@ -61,7 +65,9 @@
   
   nav a {
     /* font-size: 18px; */
+    /* color: var(--textcolor) !important; */
     color: var(--textcolor) !important;
+    /* color: red !important; */
     margin-left: 20px;
     padding: 5px 20px !important;
   }
@@ -72,12 +78,18 @@
   }
   
   .offcanvas-header{
-    /* background-color: var(--bgcolor); */
-    background-color: rgb(23, 39, 72) !important;
+    /* background-color: var(--bgcolor) !important; */
+    /* background-color: rgb(105, 107, 111) !important; */
+    background-color: rgba(240, 248, 255, 0) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter:blur(10px) ;
+
   }
   .offcanvas-body{
-   backdrop-filter: blur(10px);/ 
+   backdrop-filter: blur(10px);
    -webkit-backdrop-filter:blur(10px) ;
+   /* background-color: red !important; */
+   background-color: transparent !important;
   
   }
    
@@ -86,18 +98,96 @@
     letter-spacing: 1vw;
     text-shadow: 1px 0px var(--boxshadow);
   }
-  
-  
+
+  .offcanvas-title{
+    color: rgb(255, 255, 255) !important ;
+  }
   .nav_manu_togal button {
     background-color: rgb(0, 255, 229);
   }
   .nav_togal {
     background-color: var(--bgcolor);
+    /* background-color: red !important; */
   }
+  .navbar-toggler{
+    /* background-color: #f86f03 !important; */
+    /* box-shadow: 0px 0px red !important ; */
+    box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993 !important;
+
+  }
+  /* .navbar-toggler-icon{
+    color: rgb(214, 3, 3) !important ;
+    background-color: red;
+
+  } */
   
   /* =-------------------------------------------- main section -------------------------------------------  */
   
+
+  .demo_div{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 0, 0, 0.407);
+  }
   
+  .holo{
+    position: absolute;
+    top:0;
+    left: 0 ;
+    width: 40vw;
+    height: 250px;
+    background-color: rgb(0, 237, 174);
+    border-radius:50% 50% ;
+    filter: blur(100px);
+    animation-name: holo_animation;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: -1;
+
+  }
+  .holo2{
+    position: absolute;
+    bottom: -2%;
+    right: -5% ;
+    width: 40vw;
+    height: 250px;
+    background-color: rgb(0, 237, 174);
+    border-radius: 50% 50px;
+    filter: blur(100px);
+    animation-name: holo_animation;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: -1;
+
+  }
+
+
+
+  @keyframes holo_animation{
+    0%{
+      border-radius: 50% 50px;
+    /* border-radius:0px 0px 50% 0px; */
+
+    }
+    50%{
+      border-radius: 25% 25px;
+      /* transform: scale(2); */
+    /* border-radius:0px 0px 20% 0px; */
+
+    }
+    100%{
+      border-radius: 50% 50px;
+    /* border-radius:0px 0px 50% 0px; */
+
+    }
+  }
+
+
+
+
+
   .y_r{
     font-size:10em;
    }
@@ -107,6 +197,7 @@
    }
    
    .main_hero {
+  position: relative;
      width: 100%;
      height: auto;
      padding-top: 150px !important;
@@ -115,7 +206,7 @@
      /* padding-top: 150px ; */
      /* padding-bottom: 100px ; */
      /* padding: 69px 0px; */
-     background-color: var(--bgcolor);
+     /* background-color: var(--bgcolor); */
      /* background-color: red; */
      /* background-image:linear-gradient(to bottom , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.479)), url(https://r4.wallpaperflare.com/wallpaper/383/154/335/car-khyzyl-saleem-mazda-rx-7-simple-background-wallpaper-238d29cce5fa4c6662e27bee01ef7c70.jpg); */
      /* background-image:linear-gradient(to bottom , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.479)), url(https://cdn.dribbble.com/userupload/12632379/file/original-5b2e0c1fe4af0a04ffd3dbeb4ce41e26.png?resize=1200x945&vertical=center); */
@@ -139,22 +230,28 @@
      animation-direction: alternate;
      animation-iteration-count: infinite;
      /* transition: all 1s ease-in-out; */
+     z-index: 1;
    }
    
    .main_hero_form {
      width: 450px;
      height: 500px;
-     /* background-color: var(--bgcolor); */
-     /* box-shadow:0px 0px 3px var(--boxshadow) , inset 0px 0px 3px var(--boxshadow); */
-     border-radius: 0px 25%;
-     border-top: 1px solid rgb(255, 255, 255);
-     border-bottom: 1px solid rgb(255, 255, 255);
+     background-color: var(--bgcolor);
+     /* background-color: red;   */
+     /* background-color: white; */
+     /* box-shadow:0px 3px 1px rgba(0, 0, 0, 0.712) , inset 0px 0px 3px var(--boxshadow); */
+     box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993;
+
+     border-radius: 0px 2%;
+     /* border-top: 1px solid var(--boxshadow); */
+     /* border-bottom: 1px solid var(--boxshadow); */
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
      gap: 10%;
      backdrop-filter: blur(30px);
+   
    }
    .main_hero2_1 {
    
@@ -162,7 +259,7 @@
      /* height: auto; */
      padding-left: 20px;
      /* box-shadow: 1px 2px 5px red ; */
-     border-bottom: 1px solid rgba(255, 255, 255, 0.259);
+     border-bottom: 1px solid var(--boxshadow);
      /* display: flex;
      flex-direction: column;
      justify-content: center;
@@ -209,12 +306,14 @@
    .form_file {
      /* background-color: rgb(0, 255, 247); */
      width: 80%;
-     border: 0.1px solid rgb(0, 0, 0);
+     /* border: 0.1px solid var(--boxshadow); */
      /* border-bottom: 1px solid white; */
      /* border-top: 1px solid white; */
-     box-shadow:0px 0px 5px rgba(255, 255, 255, 0.41);
+     /* box-shadow:0px 0px 5px var(--boxshadow); */
+     box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993;
+
      padding-bottom: 10px;
-     border-radius: 10px 15%;
+     /* border-radius: 10px 15%; */
      overflow: hidden;
      color: var(--textcolor);
    }
@@ -231,7 +330,7 @@
      padding: 15px;
      /* background-color: var(--bgcolor); */
      border: none;
-     border-bottom: 1px solid rgb(0, 0, 0);
+     border-bottom: 1px solid var(--boxshadow);
      color: var(--textcolor);
    }
    input:focus {
@@ -239,7 +338,7 @@
    }
    
    ::placeholder {
-     color: var(--textcolor);
+     color: var(--textcolor) !important;
      opacity: 1; /* Firefox */
    }
    
@@ -253,7 +352,7 @@
      width: 49%;
      padding: 20px;
      background-color: transparent;
-     border-bottom: 1px solid rgb(0, 0, 0);
+     border-bottom: 1px solid var(--boxshadow);
      color: var(--textcolor);
    }
    .form_file .btn {
@@ -271,13 +370,33 @@
    
    /* ==================================================   btn  ============================================= */
    
+   /* .btn_img{
+    width: 10%;
+   } */
+
+
    .btn {
-     background-color: rgba(0, 255, 255, 0.371);
+    /* display: flex; */
+
+     /* background-color: var(--bgcolor); */
+
+     /* background-image: linear-gradient(270deg, #1caba2 20%, #1c7fab); */
+     /* box-shadow: 1px 1px 3px var(--boxshadow); */
+     /* border: 1px solid var(--textcolor); */
+
+     box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993;
+
+
+     /* box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993, 0px 0px 2px rgba(0, 0, 0, 0.201); */
+
+
      position: relative;
-     border: 1px solid var(--textcolor);
-     box-shadow: 1px 1px 3px var(--boxshadow);
-     color: var(--textcolor) !important;
+     /* color: var(--textcolor) !important; */
+     color: var(--textcolor);
+     /* color: white; */
+     /* color: black; */
      width: 90%;
+
      /* margin: 20px; */
      overflow: hidden;
      z-index:4;
@@ -295,6 +414,16 @@
      z-index: -1;
    }
    
+
+   .btn:hover {
+    /* background-color: var(--textcolor);
+    color: var(--bgcolor) !important; */
+    cursor: pointer;
+    /* box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993; */
+     box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993, 0px 0px 2px rgba(0, 0, 0, 0.201);
+
+   
+  }
    
    /* .btn:hover::after {
      left: 0;
@@ -327,19 +456,21 @@
   }
   
   .about_details{
+    padding: 0px 20px;
     padding-top:60px ;
     display: flex;
     position:relative;
     /* z-index: 999; */
     /* left: -100%; */
-    justify-content: center;
+    justify-content: center;                                   /*  this is user dashbord   */
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    width: 350px ;
+    /* width: auto ; */
     height:100vh ;
     /* background-color: rgb(54, 54, 54); */
-    background-color: rgb(3, 37, 66);
+    background-color: rgb(164, 166, 172);
+   
   }
   .about_details_photo{
     width: 150px;
@@ -404,7 +535,7 @@ background-size: cover;
 
 
   .about_details_details a{
-    background-color: #000000c8;
+    background-color: #000000c8;                            /* this is user dashbord likes   */
     text-decoration: none;
     color: white;
     display: block;
@@ -423,50 +554,67 @@ background-size: cover;
 
     width: 100%;
     height: 100vh ;
-    /* background-color: #f15a03; */
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    row-gap:50px;
+    justify-content: space-around;
     /* align-items: center; */
     overflow-y: auto;
+    /* z-index: 11; */
   
   }
   
+  .about_card_div{
+    width: 350px;
+    height:400px ;
+    /* height: auto ; */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    background-color: var(--bgcolor);
+
+    box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993;
+
+  }
   
   .about_card{
   
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;    /* ye teen line add ki h */
     align-items: center;
     
-    width: 80%;
-    gap: 50px;
-    height:150px ;
-    /* background-color: red; */
-    color: white;
-    border-top: 2px solid rgb(255, 255, 255);
-    border-bottom: 2px solid rgb(255, 255, 255);
-    box-shadow: 0px 0px 1px rgb(255, 255, 255);
+    width: 95%;
+    height:90%;
+    /* gap: 50px; */
+    /* background-color: red;   */
+    color: var(--textcolor);
+    /* border-top: 2px solid var(--boxshadow);/ */
+    /* border-bottom: 2px solid var(--boxshadow); */
+    /* box-shadow: 0px 0px 1px var(--boxshadow); */
+    box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993;
+
     border-radius: 10px;
-   overflow: hidden;
+   /* overflow: hidden; */
   
   
   }
   
   .about_card_img{
     margin-top: 10px;
-    /* width: 100%; */    /*  yr comment kiya h or height ka bhi kuch kiya h or yr flrx ko bho comment kiya */
-    height: 90%;
+     width: 50% !important;     
+    /* height: 40%; */
     /* background-color: red; */
     /* display: flex;
     align-items: center;
     justify-content: center; */
   }
   .about_card_img img{
-    /* width: 100%; */
-     height: 100%;
+    width: 100%;
+     /* height: 100%; */
      /* aspect-ratio: 3 / 2; */
     /* padding:2% 1%; */
    
@@ -475,8 +623,9 @@ background-size: cover;
   
   .card_text p{
     margin:0px;
-    /* font-size: 15px; */
-    font-weight: 600;
+    font-size: 15px;
+    font-family:  'Gill Sans MT' ; 
+    /* font-weight: 600; */
   
   }
   
@@ -485,18 +634,31 @@ background-size: cover;
   .card_text{
     display: flex;
     /* flex-direction: column; */
+    /* background-color: red; */
+    width: 90%;
     justify-content: space-around;
     margin: 20px 0px;
-    gap: 50px;
-  }
   
-  .about_card a{
-    width: 200px;
-    /* margin: 15px 10px; */
-  background-color: rgba(0, 0, 0, 0.405);
-  box-shadow: none;
-    /* padding: 5px 0px ; */
+    /* gap: 50px; */
   }
+
+
+  /* .about_card a{
+
+    width: 50%;
+   
+   } */
+
+
+  
+  /* .about_card a{ */
+    /* width: 200px;                             */
+    /* margin: 15px 10px; */
+  /* background-color: rgba(0, 0, 0, 0.405);                 */
+
+  /* box-shadow: none; */
+    /* padding: 5px 0px ; */
+  /* } */
   
   /* .about_card{
     width: 300px;
@@ -536,7 +698,7 @@ background-size: cover;
   
   
   
-  /*  -------------------------------------------  About  ------------------- End ----------------------------- */
+  /*  -------------------------------------------  About   --  user dashbord ----------- End ---------------- */
   
   .input_flex{
     display: flex;
@@ -565,7 +727,7 @@ background-size: cover;
     height: auto;
     position: relative;
     overflow-x: hidden;
-    padding-top: 56px;
+    /* padding-top: 56px; */
   
   }
   
@@ -604,13 +766,25 @@ background-size: cover;
     grid-template-columns: 1fr;
     z-index: 5;
     /* background-color: #f86f03; */
+    
     /* border-bottom: 1px solid var(--textcolor); */
-    padding-bottom: 10px;
-    border-radius: 50px;
+    box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993;
+
+    width: 40vw;
+    padding:15px 0px; 
+  
+    border-radius: 10px;
+
   }
   
   .login_form {
     /* padding-top: 100px !important ; */
+    /* background-color: red; */
+    border-radius: 10px;
+    width: 90%;
+    box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993;
+    
+    margin-left: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -620,6 +794,7 @@ background-size: cover;
     overflow: hidden;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+
   }
   
   .login_form.sign-up-form {
@@ -640,8 +815,10 @@ background-size: cover;
   .input-field {
     max-width: 380px;
     width: 100%;
-    background-color:rgba(237, 237, 237, 0.359);
-    border-bottom: 2px solid var(--textcolor);
+    /* background-color:rgb(211, 43, 43); */
+    /* border-bottom: 2px solid var(--textcolor); */
+    box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993;
+
     /* color: #04d8ec; */
     margin: 10px 0;
     height: 55px;
@@ -725,10 +902,7 @@ background-size: cover;
     width: 300px;
     margin: 20px;
   }
-  .btn:hover {
-    background-color: #39f9f6;
-    color: black !important;
-  }
+  
   .panels-container {
     position: absolute;
     height: 100%;
@@ -748,7 +922,8 @@ background-size: cover;
     right: 48%;
     transform: translatey(-50%);
     /* background-image: linear-gradient(-45deg, #000000 10%, #000000 100%); */
-    background-color: rgb(29, 66, 60);
+    /* background-color: rgb(29, 66, 60); */
+    background-color: rgb(86, 122, 166);
     transition: 0.5s ease-in-out;
     border-radius: 50%;
     z-index: 6;

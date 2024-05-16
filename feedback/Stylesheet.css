@@ -1,24 +1,50 @@
 
+
+:root {
+    --bgcolor: #dde1e7;
+    --textcolor: rgb(0, 0, 0);
+    --boxshadow: rgb(0, 0, 0);
+    /* --buttoncolor : rgb(238, 0, 255) ; */
+  }
+
+
+.go_home{
+	width: 150px; 
+	background: var(--textcolor);
+     color: var(--bgcolor);
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+     font-size: 18px;
+     margin-left:100px;
+	margin-top:25px;
+	border-radius: 10px 10%;
+                    
+}
+
+
 #navbar{
 	width:100%;
-	background-color:#fff;
+	background-color: var(--bgcolor);
 	opacity:1;
 
 }
 
+
+
 h4{
-	color: white;
+	color: var(--textcolor);
 }
 
 .form-control{
 	background-color: rgba(255, 255, 255, 0);
 }
 #tab{
-	color:#283747;
+	color: var(--textcolor);
 	font-size:18px;
 	font-family:sans-serif;
 	text-align:center;
-	background-color:#fff;
+	background-color:var(--bgcolor);
 }
 #tab:hover{
 	color:dodgerblue;
@@ -30,7 +56,7 @@ h4{
 	height:80px;
 	width:240px;
 	overflow: visible;
-	background-color:#fff;
+	background-color:var(--bgcolor);
 	padding:10px;
 	border:1.5px solid dodgerblue;
 }
@@ -262,7 +288,7 @@ h4{
 .footer input{
 	height:34px;
 	width:65%;
-	background-color:#ffffff;
+	background-color:#585656;
 	color:#000;
 	font-family:arial;
 	margin:auto;
@@ -337,10 +363,14 @@ h4{
 	margin-top:100px;
 }
 #mainform{
-	background-color:hsla(0, 0%, 100%, 0.151);
+	background-color:var(--bgcolor);
 	/* border:px solid #f1f1f1; */
 	padding:20px;
-	height:auto;
+	width: 100vw;
+	height: auto ;
+	margin: auto;
+
+	 
 	/* opacity:.7; */
 	/* animation-name:form; */
 	/* animation-duration:1s; */

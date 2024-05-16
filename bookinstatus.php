@@ -15,10 +15,19 @@
     font-family:sans-serif;
 }
 
+:root {
+    --bgcolor: #dde1e7;
+    --textcolor: rgb(0, 0, 0);
+    --boxshadow: rgb(0, 0, 0);
+    /* --buttoncolor : rgb(238, 0, 255) ; */
+  }
+  
+
+
 body{
     /* background: url("images/carbg2.jpg"); */
     /* background-position: center; */
-    background-color: rgb(2, 14, 37);
+    background-color: var(--bgcolor);
    
 }
 .box{
@@ -28,7 +37,8 @@ body{
     left: 50%;
     padding: 20px;
     box-sizing: border-box;
-    background: #fff;
+    /* background: #fff; */
+    background-color: red;
     border-radius: 4px;
     box-shadow: 0 5px 15px rgba(0,0,0,.5);
     background: linear-gradient(to top, rgba(255, 251, 251, 1)70%,rgba(250, 246, 246, 1)90%);
@@ -99,7 +109,7 @@ ul li{
 }
 .name{
     /* font-weight: bold; */
-    color: white;
+    color: var(--textcolor);
    
 }
 

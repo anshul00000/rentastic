@@ -11,17 +11,25 @@
 <body>
 
 <style>
+
+:root {
+    --bgcolor: #dde1e7;
+    --textcolor: rgb(0, 0, 0);
+    --boxshadow: rgb(0, 0, 0);
+    /* --buttoncolor : rgb(238, 0, 255) ; */
+  }
+  
     
 *{
     margin: 0;
     padding: 0;
    box-sizing: border-box;
-   color: white;
+   color: var(--textcolor);
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 body{
-    background-color: rgb(2, 14, 37);
+    background-color: var(--bgcolor);
 }
 .hai{
     width: 100%;
@@ -58,7 +66,7 @@ body{
 } */
 
 .logo{
-    color: #ff7200;
+    color: var(--textcolor);
     font-size: 35px;
     font-family: Arial;
     padding-left: 20px;
@@ -105,6 +113,12 @@ ul li a{
 
     /* background-color: red; */
     overflow-x: auto;
+
+    /* box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993; */
+
+    box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993;
+
+
 
 }
 
@@ -255,7 +269,7 @@ $num=mysqli_num_rows($queryy);
       <a class="navbar-brand brand_name" href="index.php">RENTASTIC</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon navbar-dark"></span>
+        <span class="navbar-toggler-icon "></span>
       </button>
       <div class="offcanvas bg-transparent offcanvas-end" tabindex="-1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">

@@ -61,7 +61,6 @@
   }
   
   nav a {
-    /* font-size: 18px; */
     color: var(--textcolor) !important;
     margin-left: 20px;
     padding: 5px 20px !important;

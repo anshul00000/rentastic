@@ -41,7 +41,7 @@
             <a class="navbar-brand brand_name" href="#">RENTASTIC</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon navbar-dark"></span>
+                <span class="navbar-toggler-icon "></span>
             </button>
             <div class="offcanvas bg-transparent offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
@@ -131,7 +131,7 @@
             // echo $result['AVAILABLE'];
             
     ?>  
-
+<div class="about_card_div">
             <div class="about_card">
                 <div class="about_card_img">
 
@@ -147,7 +147,7 @@
                     
                     <p>Fuel Type : <?php echo $result['FUEL_TYPE']?></p>
                     <p>Rent Per Day : ₹<?php echo $result['PRICE']?>/-</p></div>
-                   
+                    
                 </div>
 
                 <!-- <button class="btn" type="button">view car</button> -->
@@ -155,25 +155,23 @@
             
                 <!-- </form> -->
             </div>
+            </div>
 
             <?php
         }
     
     ?>
     <?php 
-    require_once('connection.php');
+    // require_once('connection.php');
         
 
-    $value = $_SESSION['email'];
+    // $value = $_SESSION['email'];
     
-    $sql="select * from users where EMAIL='$value'";
-    $name = mysqli_query($con,$sql);
-    $rows=mysqli_fetch_assoc($name);
-    // // $sql2="select *from cars where CAR_ID=1";
-    // $cars= mysqli_query($con,"select *from cars where CAR_ID=1");
-    
-    // $row=mysqli_fetch_assoc($cars);
-    
+    // $sql="select * from users where EMAIL='$value'";
+    // $name = mysqli_query($con,$sql);
+    // $rows=mysqli_fetch_assoc($name);
+   
+        
         
         
         }
@@ -186,49 +184,12 @@
 
            
 
-            <!-- <div class="about_card">
-             
-                <img src="https://imgd.aeplcdn.com/370x208/n/cw/ec/130591/fronx-exterior-right-front-three-quarter-109.jpeg?isig=0&q=80" alt="mycar">
-
-                <div class="card_text">
-
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, iure? Lorem ipsum dolor sit, amet
-                        consectetur adipisicing elit. Porro, sint.</p>
-                    <button class="btn" type="button">view car</button>
-                </div>
-            </div> -->
-
-            <!-- <div class="about_card">
-                <img src="https://cdn.dribbble.com/userupload/13032191/file/original-e6a658ca7003234094db94e32c1cb723.jpg?resize=1200x900&vertical=center" alt="mycar" />
-                <div class="card_text">
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, iure? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, sint.</p>
-<button class="btn" type="button">view car</button>
- </div>
-            </div>
-            
-            <div class="about_card">
-                <img src="https://cdn.dribbble.com/userupload/13032191/file/original-e6a658ca7003234094db94e32c1cb723.jpg?resize=1200x900&vertical=center" alt="mycar" />
-                <div class="card_text">
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, iure? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, sint.</p>
-<button class="btn" type="button">view car</button>
- </div>
-            </div>
-            
-            <div class="about_card">
-                <img src="https://cdn.dribbble.com/userupload/13032191/file/original-e6a658ca7003234094db94e32c1cb723.jpg?resize=1200x900&vertical=center" alt="mycar" />
-                <div class="card_text">
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, iure? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, sint.</p>
-<button class="btn" type="button">view car</button>
- </div>
-            </div>
-            -->
 
 
         </div>
-    </div>
+        </div>
+
+
 
 
 

@@ -21,9 +21,20 @@
 
   <style>
 
+
+:root {
+    --bgcolor: #dde1e7;
+    --textcolor: rgb(0, 0, 0);
+    --boxshadow: rgb(0, 0, 0);
+    /* --buttoncolor : rgb(238, 0, 255) ; */
+  }
+  
+
+
+
 body{
     /* width: 100%; */
-    background-color: rgb(2, 14, 37);
+    background-color: var(--bgcolor);
    
 }
 
@@ -51,7 +62,7 @@ body{
     align-items: center;
     justify-content: space-around;
     padding: 20px 20px ;
-    box-shadow: 0px 0px 5px white;
+    box-shadow: 0px 0px 5px var(--textcolor);
     /* border: 1px solid white; */
     /* background-color: lightslategrey; */
     
@@ -70,11 +81,11 @@ body{
     width:60%;
     font-family: sans-serif;
     text-align: center;
-    color: white;
+    color: var(--textcolor);
     font-size: 22px;
     /* background-color: white; */
-    border-top: 1px solid white ;
-    border-bottom: 1px solid white ;
+    border-top: 1px solid var(--textcolor) ;
+    border-bottom: 1px solid var(--textcolor) ;
     border-radius: 5px;
     margin: 2px;
     padding: 8px;
@@ -85,11 +96,11 @@ body{
     width: 60%;
     height: 75px;
     background: transparent !important;
-    border-bottom: 1px solid #ff7200;
+    border-bottom: 1px solid var(--textcolor);
     border-top: none;
     border-right: none;
     border-left:none;
-    color:#fff;
+    color:var(--textcolor);
     font-size: 15px;
     letter-spacing: 1px;
     margin-top: 30px;
@@ -100,7 +111,7 @@ body{
 }
 
 ::placeholder{
-    color:#fff;
+    color:var(--textcolor);
     font-family: Arial;
     
 }
@@ -136,7 +147,7 @@ body{
     font-size: 17px;
     padding-top: 20px;
     text-align: center;
-    color: #fff;
+    color: var(--textcolor);
 }
 
 .form .link a{
@@ -181,12 +192,12 @@ body{
     /* font-size: 18px; */
     /* border-radius: 10px; */
     cursor: pointer;
-    color:#fff;
+    color:var(--textcolor);
 }
 
 .back a{
     text-decoration: none;
-    color: black;
+    color: var(--textcolor);
     font-weight: bold;
 }
 </style>

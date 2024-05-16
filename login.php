@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,6 +49,9 @@
   #message {
   display:none;
   background: #f1f1f1;
+  /* box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993; */
+  box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993;
+
   color: #000;
   position: absolute;
   padding: 20px;
@@ -81,7 +83,9 @@
   position: relative;
   left: -35px;
   content: "✖";
-}</style> 
+}
+
+</style> 
 
 
 
@@ -223,7 +227,7 @@ if(isset($_POST['regs']))
       <a class="navbar-brand brand_name" href="#">RENTASTIC</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon navbar-dark"></span>
+        <span class="navbar-toggler-icon "></span>
       </button>
       <div class="offcanvas bg-transparent offcanvas-end" tabindex="-1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">
