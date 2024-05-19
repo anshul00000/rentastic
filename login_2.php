@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>CAR RENTAL</title>
 
+
+
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack() {
+            window.history.forward();
+        }
+    </script>
+
+
+
+
+
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
- <!-- <link rel="stylesheet" href="style_home.css"> -->
- <link rel="stylesheet" href="mycss/navbar_.css">
- <link rel="stylesheet" href="mycss/login_.css">
- <link rel="stylesheet" href="css/regs.css" type="text/css">
+    <!-- <link  rel="stylesheet" href="mycss/style.css"> -->
+    <link  rel="stylesheet" href="mycss/login.css">
+   <link rel="stylesheet" href="css/regs.css" type="text/css">
+    <!-- <link  rel="stylesheet" href="css/style.css"> -->
+
+    
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward(); 
+        }
+          
+        setTimeout("preventBack()", 0);
+          
+        window.onunload = function () { null };
+    </script>
 
 
- <style>
-
+<style>
+     
+   
 .user_login .btn{
   width: 150px;
   position: absolute;
@@ -63,8 +86,8 @@
   content: "✖";
 }
 
+</style> 
 
- </style>
 
 
 </head>
@@ -197,53 +220,59 @@ if(isset($_POST['regs']))
 
 ?>
 
+        
+  <div class="fullnav">
+  </div>
+  <nav class="navbar navbar-expand-lg   navbaarrr">
+    <div class="container-fluid blur_nav ">
+      <a class="navbar-brand brand_name" href="#">RENTASTIC</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="offcanvas bg-transparent offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header nav_manu_togal nav_togal ">
+          <h5 class="offcanvas-title  brand_name" id="offcanvasNavbarLabel">RENTASTIC ✔️</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body nav_manu_togal">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 me-5 ">
+            <li class="nav-item ">
+              <a class="nav-link " aria-current="page" href="index.php">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashbord.php">Deshbord</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="logout.php">Login/Signup</a>
+            </li>
+           
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li> -->
+          </ul>
 
-
-<!-- 
-<div class="fullnav">
-</div> -->
-<nav class="navbar navbar-expand-lg   navbaarrr">
-  <div class="container-fluid blur_nav ">
-    <a class="navbar-brand brand_name brand_name_1" href="#">RENTASTIC</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-      aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon "></span>
-    </button>
-    <div class="offcanvas bg-transparent offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-      aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header nav_manu_togal nav_togal ">
-        <h5 class="offcanvas-title  brand_name brand_name_2" id="offcanvasNavbarLabel">RENTASTIC.</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body nav_manu_togal">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 me-5 brand_name_2 ">
-          <li class="nav-item ">
-            <a class="nav-link " aria-current="page" href="index.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="dashbord.php">Deshbord</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="login.php">Login/Signup</a>
-          </li>
-          
-        </ul>
-
+        </div>
       </div>
     </div>
-  </div>
-</nav>
-
-
-<!-- main ligin page START ---- -->
+  </nav>
+         
 
 
 
-
-
-
-<div class="main_form">
-    <!-- <span class="user_login"> <a class="btn" href="adminlogin.php">adminlogin</a></span> -->
+  <div class="main_form">
+  <span class="user_login"> <a class="btn" href="adminlogin.php">adminlogin</a></span>
 
         <div class="container">
           <div class="forms-container">
@@ -266,7 +295,7 @@ if(isset($_POST['regs']))
  
                 <!-- <input class="btnn" type="submit" value="Login" name="login"></input> -->
                 
-<!-- 
+
                 <p class="social-text">Or Sign in with social platforms</p>
                 <div class="social-media">
                   <a href="#" class="social-icon">
@@ -281,10 +310,8 @@ if(isset($_POST['regs']))
                   <a href="#" class="social-icon">
                     <i class="fab fa-linkedin-in"></i>
                   </a>
-                </div> -->
+                </div>
               </form>
-
-
               <form  method="POST" class="sign-up-form login_form ">      
                                                        <!-- sign-up from  -->
                 <h2 class="title">Sign up</h2>
@@ -361,15 +388,31 @@ if(isset($_POST['regs']))
             <!-- <input type="submit" class="btnn"  value="REGISTER" name="regs" style="background-color: #ff7200;color: white"> -->
                 
 
-           
 
-               
-            
-            
-          </form>
-        </div>
-      </div>
-      
+
+
+
+
+
+                <!-- <p class="social-text">Or Sign up with social platforms</p>
+                <div class="social-media">
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-google"></i>
+                  </a>
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div> -->
+              </form>
+            </div>
+          </div>
+
           <div class="panels-container">
             <div class="panel left-panel">
               <div class="content">
@@ -440,39 +483,13 @@ if(isset($_POST['regs']))
               
               
             </div> -->
+      
 
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
-
-
-
-
-<!-- main ligin page END ---- -->
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
-  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-   
- <script>
-       const sign_in_btn = document.querySelector("#sign-in-btn");
-        const sign_up_btn = document.querySelector("#sign-up-btn");
-        const container = document.querySelector(".container");
-    
-        sign_up_btn.addEventListener("click", () => {
-          container.classList.add("sign-up-mode");
-        });
-    
-        sign_in_btn.addEventListener(
-          "click",
-          () => {
-            container.classList.remove("sign-up-mode");
-          },
-          []
-        );
-  </script>
-
-
-<script>
+    <script>
 var myInput = document.getElementById("psw");
 var letter = document.getElementById("letter");
 var capital = document.getElementById("capital");
@@ -542,18 +559,23 @@ myInput.onkeyup = function() {
         return true;
     }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
+<script>
+       const sign_in_btn = document.querySelector("#sign-in-btn");
+        const sign_up_btn = document.querySelector("#sign-up-btn");
+        const container = document.querySelector(".container");
+    
+        sign_up_btn.addEventListener("click", () => {
+          container.classList.add("sign-up-mode");
+        });
+    
+        sign_in_btn.addEventListener(
+          "click",
+          () => {
+            container.classList.remove("sign-up-mode");
+          },
+          []
+        );
+  </script>
 
 </body>
 </html>
