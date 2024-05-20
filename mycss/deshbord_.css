@@ -133,8 +133,8 @@ background-size: cover;
     justify-content: center;
     /* background-color: red; */
     background-color: var(--bgcolor);
-
     box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993;
+    
 
   }
   

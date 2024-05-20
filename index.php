@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="mycss/navbar_.css">
    <link rel="stylesheet" href="mycss/index_.css">
+   <link rel="stylesheet" href="mycss/deshbord_.css">
 
     <!-- <link  rel="stylesheet" href="mycss/style.css"> -->
     <!-- <link  rel="stylesheet" href="css/style.css"> -->
@@ -119,7 +120,78 @@
 
 
 
-    <!-- first box  start -->
+    <!-- first box  end -->
+
+
+
+    <!-- SECOND BOX START -->
+
+
+
+
+    <?php
+    require_once('connection.php');
+    
+        $sql2 = "select *from cars where AVAILABLE='Y'";
+        $cars = mysqli_query($con, $sql2);
+
+    
+
+
+    ?>
+
+<div class="about_cards">
+                <?php
+                while ($result = mysqli_fetch_array($cars)) {
+
+
+                ?>
+                    <div class="about_card_div">
+                        <div class="about_card">
+                            <div class="about_card_img">
+
+                                <img src="images/<?php echo $result['CAR_IMG'] ?>" alt="mycar">
+                            </div>
+
+
+                            <?php $res = $result['CAR_ID']; ?>
+
+                            <div class="card_text">
+                                <div>
+                                    <p><?php echo $result['CAR_NAME'] ?></p>
+                                    <p>CAPACITY : <?php echo $result['CAPACITY'] ?></p>
+                                </div>
+                                <div>
+
+                                    <p>Fuel Type : <?php echo $result['FUEL_TYPE'] ?></p>
+                                    <p>Rent Per Day : ₹<?php echo $result['PRICE'] ?>/-</p>
+                                </div>
+
+                            </div>
+
+
+                            <a class="btn" type="submit" name="booknow" class="utton" href="booking.php?id=<?php echo $res; ?>">Book</a>
+
+
+                        </div>
+                    </div>
+
+                <?php
+                }
+
+                ?>
+           
+
+
+            </div>
+
+
+
+
+
+    <!-- SECOND BOX END -->
+
+    
   
 
 
