@@ -14,9 +14,38 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+     <!-- font awasom cdn  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+     <!-- scroll effext  -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+     
+
+
+     <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+
+    <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
+    rel="stylesheet">
+
+
+
+
     <link rel="stylesheet" href="mycss/navbar_.css">
-   <link rel="stylesheet" href="mycss/index_.css">
-   <link rel="stylesheet" href="mycss/deshbord_.css">
+    <link rel="stylesheet" href="mycss/index_.css">
+    <link rel="stylesheet" href="mycss/deshbord_.css">
+    <link rel="stylesheet" href="mycss/footer_.css">
+    <link rel="stylesheet" href="mycss/car_cards_.css">
 
     <!-- <link  rel="stylesheet" href="mycss/style.css"> -->
     <!-- <link  rel="stylesheet" href="css/style.css"> -->
@@ -41,12 +70,11 @@
 
 </head>
 <body>
+    
+    <!-- <div class="plan"><img src="public/plane.png" alt=""></div> -->
+    <div class="holo"></div>
+    <div class="holo2"></div>
 
-
-
-
-<div class="holo"></div>
-<div class="holo2"></div>
 
 <nav class="navbar navbar-expand-lg   navbaarrr">
         <div class="container-fluid blur_nav ">
@@ -62,13 +90,13 @@
                 <div class="offcanvas-body nav_manu_togal">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 me-5 brand_name_2 ">
                         <li class="nav-item ">
-                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.php"><i class="fa-solid fa-house header_icon"></i>Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="dashbord.php">Deshbord</a>
+                            <a class="nav-link " href="dashbord.php"><i class="fa-solid fa-bars-staggered header_icon"></i>Dashbord</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="login.php">Login/signup</a>
+                            <a class="nav-link " href="login.php"><i class="fa-solid fa-door-open header_icon" ></i>Login</a>  <!-- Signup -->
                         </li>
                      
                     </ul>
@@ -85,22 +113,23 @@
       
   <div class="main_hero">
     <div class="main_hero2_1">
-      <h1 class="y_r">Your <span style=color:orange>Ride</span> </h1>
-      <h1 class="y_w">Your <span style="color:black;">Way.</span> </h1>
+      <!-- <img class="hero_img" src="public/mycar.svg" alt=""> -->
+      <h1 class="y_r "   data-aos="zoom-out-right">Your <span style=color:orange; >Ride</span> </h1>
+      <h1 class="y_w " data-aos="zoom-out-left">Your <span class="way">Way.</span> </h1>
       <a href="dashbord.php">
       <button class="btn" type="submit">View Cars -> </button>
       </a>
-     
     </div>
 
     <div class="main_hero_form">
       <div>
-        <img src="public/mycar.svg" alt="mycar" width='200px' />
-        <p>Get car with your mood </p>
+        <!-- <img src="public/mycar.svg" alt="mycar" width='200px' /> -->
+        <h1>WITH <span class="font" style=color:darkorange>RENTASTIC</span></h1>
+        <p>Get car to your mood </p>
       </div>
 
       <div class="form_file">
-        <form>
+        <!-- <form>
           <input type="text" placeholder="location" name="location" onChange={myfun} />
           <p>start-end time</p>
 
@@ -112,7 +141,11 @@
           <button class="btn" type="submit">
             Search
           </button>
-        </form>
+        </form> -->
+         
+        <!-- <img class="index_img" src="public/car2.svg" alt="...">
+        <img class="index_img" src="public/car1.svg" alt="..."> -->
+
       </div>
     </div>
   </div>
@@ -125,10 +158,6 @@
 
 
     <!-- SECOND BOX START -->
-
-
-
-
     <?php
     require_once('connection.php');
     
@@ -140,50 +169,220 @@
 
     ?>
 
-<div class="about_cards">
-                <?php
+  <!-- <h1 class="container mt-4">Featured cars</h1> -->
+
+   
+  <section class="section featured-car" id="featured-car">
+        <div class="container">
+
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Featured cars</h2>
+
+            <a href="#" class="featured-car-link">
+              <!-- <span>View more</span>  <ion-icon name="arrow-forward-outline"></ion-icon> -->
+            </a>
+            
+          </div>
+
+          <ul class="featured-car-list">
+          <?php
                 while ($result = mysqli_fetch_array($cars)) {
 
 
                 ?>
-                    <div class="about_card_div">
-                        <div class="about_card">
-                            <div class="about_card_img">
+            <li>
+              <div class="featured-car-card">
 
-                                <img src="images/<?php echo $result['CAR_IMG'] ?>" alt="mycar">
-                            </div>
+                <figure class="card-banner">
+                  <img src="images/<?php echo $result['CAR_IMG'] ?>" alt="" loading="lazy" width="440" height="300"
+                    class="w-100">
+                </figure>
+                <?php $res = $result['CAR_ID']; ?>
+           
+                <div class="card-content">
+
+                  <div class="card-title-wrapper">
+                    <h3 class="h3 card-title">
+                      <p><?php echo $result['CAR_NAME'] ?></p>
+                    </h3>
+
+                    <!-- <data class="year" value="2019">2019</data> -->
+                  </div>
+
+                  <ul class="card-list">
+
+                    <li class="card-list-item">
+                      <ion-icon name="people-outline"></ion-icon>
+
+                      <span class="card-item-text"><?php echo $result['CAPACITY'] ?> People</span>
+                    </li>
+
+                    <li class="card-list-item">
+                      <ion-icon name="flash-outline"></ion-icon>
+
+                      <span class="card-item-text"><?php echo $result['FUEL_TYPE'] ?></span>
+                    </li>
+
+                    <li class="card-list-item">
+                      <ion-icon name="speedometer-outline"></ion-icon>
+
+                      <span class="card-item-text">₹/- Per/Day</span>
+                      <!-- <span class="card-item-text">7.2km / 1-litre</span> -->
+                    </li>
+
+                    <li class="card-list-item">
+                      <!-- <ion-icon name="hardware-chip-outline"></ion-icon> -->
+
+                      <!-- <span class="card-item-text">Automatic</span> -->
+                    </li>
+
+                  </ul>
+
+                  <div class="card-price-wrapper">
+
+                    <p class="card-price">
+                      <strong>₹<?php echo $result['PRICE'] ?>/-</strong> / day 
+                    </p>
+
+                    <!-- <button class="btn fav-btn" aria-label="Add to favourite list">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button> -->
+
+                    <!-- <button class="btn">Rent now</button> -->
+                    <a class="btn" type="submit" name="booknow" class="utton" href="booking.php?id=<?php echo $res; ?>">Rent now</a>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
 
 
-                            <?php $res = $result['CAR_ID']; ?>
 
-                            <div class="card_text">
-                                <div>
-                                    <p><?php echo $result['CAR_NAME'] ?></p>
-                                    <p>CAPACITY : <?php echo $result['CAPACITY'] ?></p>
-                                </div>
-                                <div>
-
-                                    <p>Fuel Type : <?php echo $result['FUEL_TYPE'] ?></p>
-                                    <p>Rent Per Day : ₹<?php echo $result['PRICE'] ?>/-</p>
-                                </div>
-
-                            </div>
-
-
-                            <a class="btn" type="submit" name="booknow" class="utton" href="booking.php?id=<?php echo $res; ?>">Book</a>
-
-
-                        </div>
-                    </div>
-
-                <?php
+            <?php
                 }
 
                 ?>
-           
 
 
-            </div>
+            
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #GET START
+      -->
+
+      <section class="section get-start">
+        <div class="container">
+
+          <h2 class="h2 section-title">Get started with 4 simple steps</h2>
+
+          <ul class="get-start-list">
+
+            <li>
+              <div class="get-start-card">
+
+                <div class="card-icon icon-1">
+                  <ion-icon name="person-add-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Create a profile</h3>
+
+                <p class="card-text">
+                  <!-- If you are going to use a passage of Lorem Ipsum, you need to be sure. -->
+                </p>
+
+                <a href="#" class="card-link">Get started</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="get-start-card">
+
+                <div class="card-icon icon-2">
+                  <ion-icon name="car-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Tell us what car you want</h3>
+
+                <p class="card-text">
+                  <!-- Various versions have evolved over the years, sometimes by accident, sometimes on purpose -->
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="get-start-card">
+
+                <div class="card-icon icon-3">
+                  <ion-icon name="person-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Match with seller</h3>
+
+                <p class="card-text">
+                  <!-- It to make a type specimen book. It has survived not only five centuries, but also the leap into electronic -->
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="get-start-card">
+
+                <div class="card-icon icon-4">
+                  <ion-icon name="card-outline"></ion-icon>
+                </div>
+
+                <h3 class="card-title">Make a deal</h3>
+
+                <p class="card-text">
+                  <!-- There are many variations of passages of Lorem available, but the majority have suffered alteration -->
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -191,14 +390,33 @@
 
     <!-- SECOND BOX END -->
 
+    <?php
+
+    include 'footer.php';
+    // require_once('footer.php');
+
     
-  
+    ?>
 
 
 
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+   
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script> -->
+
+<!-- scroll effect -->
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+     AOS.init();
+   </script>
+
+   <!-- scroll effect -->
+
 </body>
 </html>

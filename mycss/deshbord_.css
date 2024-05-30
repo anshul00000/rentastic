@@ -4,12 +4,14 @@
   
   .about_div{
     display: flex;
+    /* align-items: center; */
+    gap: 10%;
     width: 100%;
-    /* width: 20px; */
-    /* height: auto; */
+    width: 100%;
+    height: auto;
     /* padding-top: 200px; */
     position: relative;
-    background-color: var(--bgcolor);
+    /* background-color: var(--bgcolor); */
     /* background-color: red !important; */
   
   }
@@ -18,9 +20,10 @@
     padding: 0px 20px;
     padding-top:60px ;
     display: flex;
-    position:relative;
+    position:fixed;
     /* z-index: 999; */
     /* left: -100%; */
+    left: -100%;
     justify-content: center;                                   /*  this is user dashbord   */
     align-items: center;
     flex-direction: column;
@@ -28,9 +31,32 @@
     /* width: auto ; */
     height:100vh ;
     /* background-color: rgb(54, 54, 54); */
-    background-color: rgb(164, 166, 172);
-   
+    background-color: rgb(128, 129, 132);
+    transition: all ease-in-out 1s ;
+     z-index: 800;
   }
+
+  .left{
+    left: 0%;
+  }
+
+#close_admin{
+  position: fixed;
+  top: 70px;
+   left: 5px;
+  padding: 0px 20px;
+  font-size: 20px;
+  background-color: rgba(255, 0, 0, 0);
+  /* color: rgb(255, 255, 255); */
+  box-shadow: 2px 2px black;
+  outline: none;
+  border:none;
+  border-radius: 5px 5%;
+  z-index: 999;
+
+
+}
+
   .about_details_photo{
     width: 150px;
     height: 160px;
@@ -110,15 +136,18 @@ background-size: cover;
     padding-top:80px !important;
     /* padding: 0px 10px; */
     /* width:calc(100% - 250px) ; */
-
+  
     width: 100%;
-    height: 100vh ;
+    height: auto ;
     display: flex;
     flex-wrap: wrap;
+    padding-left: 10px;
     row-gap:50px;
-    justify-content: space-around;
-    /* align-items: center; */
-    overflow-y: auto;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    /* overflow-y: auto; */
     /* z-index: 11; */
   
   }
@@ -133,9 +162,29 @@ background-size: cover;
     justify-content: center;
     /* background-color: red; */
     background-color: var(--bgcolor);
-    box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993;
-    
 
+    box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993;
+    transition: all ease-in-out 200ms;
+    z-index: 800 !important;
+
+  }
+
+  .about_card_div:hover{
+    cursor: pointer;
+
+  }
+
+
+  .about_cards:has(.about_card_div:hover)
+  .about_card_div:not(:hover)
+  /* h1:not(:hover) */
+  /* .box:has(.imgg:hover) */
+  /* .imgg:hover */
+  {
+     scale: 0.8 ;
+     opacity: 0.5;
+     /* color: blue; */
+     
   }
   
   .about_card{
@@ -161,7 +210,7 @@ background-size: cover;
   
   
   }
-  
+ 
   .about_card_img{
     margin-top: 10px;
      width: 50% !important;     
@@ -209,7 +258,7 @@ background-size: cover;
      position: relative;
      box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993;
      color: var(--textcolor);
-     width: 90%;
+     /* width: 90%; */
      overflow: hidden;
      z-index:4;
    }
@@ -247,4 +296,51 @@ background-size: cover;
    } 
   
    
+  .DASHBORD_TABLE{
+    /* background-color: blue; */
+    overflow-x: auto;
+    padding: 20px 0px;
+    padding-bottom: 50px;
+    width: 100%;
+    margin-top: 80px;
+  }
+
+
+  .DASHBORD_TABLE::-webkit-scrollbar {
+    cursor: pointer;
+  height: 10px;
+    width: 5px;
+  }
+
+
+  .DASHBORD_TABLE::-webkit-scrollbar-thumb {
+  cursor: ns-resize;
+    background-color: rgba(0, 0, 0, 0.163);
+    border-radius: 50px;
   
+  }
+
+  .DASHBORD_TABLE table{
+    margin: auto;
+
+  }
+
+
+  .DASHBORD_TABLE table th{
+    text-align: center;
+    background-color: #000000;
+    color: white;
+    padding: 20px 40px;
+    border-bottom: 1px solid black;
+  }
+
+
+  .DASHBORD_TABLE table td{
+    text-align: center;
+    /* background-color: #04d8ec; */
+    padding: 20px 0px;
+    padding-left: 40px;
+    /* padding-right: 20px; */
+    border-bottom: 1px solid black;
+
+  }

@@ -7,8 +7,9 @@
     <title>CAR BOOKING</title>
  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-   <link  rel="stylesheet" href="mycss/style.css">
-
+   <!-- <link  rel="stylesheet" href="mycss/style.css"> -->
+   <link  rel="stylesheet" href="mycss/navbar_.css">
+ 
 
     <script type="text/javascript">
         function preventBack() {
@@ -20,217 +21,7 @@
         window.onunload = function () { null };
     </script>
 
-<style>
-*{
-    margin: 0;
-    padding: 0;
-
-}
-
-div.main{
-
-    /* width: 400px; */
-    width: 50%;
-    margin: 100px auto 0px auto;
-}
-.btnn{
-    width: 240px;
-    height: 40px;
-    background-color: black;
-    /* background: #ff7200; */
-    border:none;
-    margin-top: 30px;
-    margin-left: 30px;
-    font-size: 18px;
-    border-radius: 10px 10%;
-    cursor: pointer;
-    color:#fff;
-    border-bottom: 2px solid white;
-
-    /* transition: 0.4s ease; */
-}
-
-.btnn:hover{
-    background: transparent;
-    /* color:black; */
-    /* border-bottom: 2px solid black; */
-}
-
-.btnn a{
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
-h2{
-    text-align: center;
-    padding: 20px;
-    font-family: sans-serif;
-
-}
-div.register{
-    /* background-color: rgba(0,0,0,0.6); */
-    width: 100%;
-    font-size: 18px;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.3);
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
-    color: #fff;
-
-}
-
-
-
-form#register{
-    margin: 40px;
-
-}
-
-label{
-    font-family: sans-serif;
-    font-size: 18px;
-    font-style: italic;
-}
-
-input#name{
-    width:300px;
-    border:1px solid #ddd;
-    border-radius: 3px;
-    outline: 0;
-    padding: 7px;
-    background-color: #fff;
-    box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3);
-}
-
-input#dfield{
-    width:300px;
-    border:1px solid #ddd;
-    border-radius: 3px;
-    outline: 0;
-    padding: 7px;
-    background-color: #fff;
-    box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3);
-}
-
-input#datefield{
-    width:300px;
-    border:1px solid #ddd;
-    border-radius: 3px;
-    outline: 0;
-    padding: 7px;
-    background-color: #fff;
-    box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3);
-}
-
-*{
-    margin: 0;
-    padding: 0;
-
-}
-.hai{
-    width: 100%;
-    height: 0px;
-    
-    
-}
-.main{
-    width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0)50%, rgba(0,0,0,0)50%);
-    background-position: center;
-    background-size: cover;
-    
-  
-}
-/* .navbar{
-    width: 1200px;
-    height: 75px;
-    margin: auto;
-} */
-
-.icon{
-    width:200px;
-    float: left;
-    height : 70px;
-}
-
-.logo{
-    color: #ff7200;
-    font-size: 35px;
-    font-family: Arial;
-    padding-left: 20px;
-    float:left;
-    padding-top: 10px;
-
-}
-/* .menu{
-    width: 400px;
-    float: left;
-    height: 70px;
-
-} */
-/* 
-ul{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-}
-
-ul li{
-    list-style: none;
-    margin-left: 80px;
-    margin-top: 20px;
-    font-size: 14px;
-    color: black;
-
-}
-
-ul li a{
-    text-decoration: none;
-    color:white;
-    font-family: Arial;
-    font-weight: bold;
-    transition: 0.4s ease-in-out;
-
-} */
-
-.nn{
-    width:100px;
-    background: #ff7200;
-
-    border:none;
-    height: 40px;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    color:white;
-    transition: 0.4s ease;
-    
-
-}
-
-.nn a{
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    
-}
-
-.circle{
-    border-radius:48%;
-    width:65px;
-}
-
-.phello{
-    width: 200px;
-    margin-left: -50px;
-    padding: 0px;
-}
-
-
-</style>
-
+      <link rel="stylesheet" href="mycss/booking_.css">
 
 
 </head>
@@ -259,7 +50,10 @@ ul li a{
     $uemail=$rows['EMAIL'];
     $carprice=$email['PRICE'];
 
+    $carname  =  $email['CAR_NAME'] ;
     
+
+
     if(isset($_POST['book'])){
        
         $bplace=mysqli_real_escape_string($con,$_POST['place']);
@@ -275,8 +69,11 @@ ul li a{
         }
         else{
             if($bdate<$rdate){
+
+
+
             $price=($dur*$carprice);
-            $sql="insert into booking (CAR_ID,EMAIL,BOOK_PLACE,BOOK_DATE,DURATION,PHONE_NUMBER,DESTINATION,PRICE,RETURN_DATE) values($carid,'$uemail','$bplace','$bdate',$dur,$phno,'$des',$price,'$rdate')";
+            $sql="insert into booking (CAR_ID,CAR_NAME,EMAIL,BOOK_PLACE,BOOK_DATE,DURATION,PHONE_NUMBER,DESTINATION,PRICE,RETURN_DATE) values($carid, '$carname ','$uemail','$bplace','$bdate',$dur,$phno,'$des',$price,'$rdate')";
             $result = mysqli_query($con,$sql);
             
             if($result){

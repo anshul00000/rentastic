@@ -18,12 +18,12 @@
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'sanjaybusiness444@gmail.com';
+    $mail->Username   = 'anshulchaurasiya05@gmail.com';
     $mail->Password   = 'okymsvycekvixopz';
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
     
-    $mail->setFrom("sanjaybusiness444@gmail.com", "Codes Of Kevin");
+    $mail->setFrom("anshulchaurasiya05@gmail.com", "RENTASTIC");
     
     $message = '<!DOCTYPE html>
     <html lang="en">

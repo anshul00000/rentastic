@@ -221,7 +221,7 @@ if(isset($_POST['regs']))
             <a class="nav-link " aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="dashbord.php">Deshbord</a>
+            <a class="nav-link" href="dashbord.php">Dashbord</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="login.php">Login/Signup</a>

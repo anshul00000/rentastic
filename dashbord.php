@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
+     <!-- font asasom cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
    
     <link rel="stylesheet" href="mycss/deshbord_.css">
@@ -23,8 +25,6 @@
     require_once('connection.php');
     session_start();
     if ($_SESSION['email']) {
-
-
 
         $value = $_SESSION['email'];
         $_SESSION['email'] = $value;
@@ -59,13 +59,13 @@
                 <div class="offcanvas-body nav_manu_togal">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 me-5 brand_name_2 ">
                         <li class="nav-item ">
-                            <a class="nav-link " aria-current="page" href="index.php">Home</a>
+                            <a class="nav-link " aria-current="page" href="index.php"><i class="fa-solid fa-house header_icon"></i>Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="dashbord.php">Deshbord</a>
+                            <a class="nav-link active" href="dashbord.php"><i class="fa-solid fa-bars-staggered header_icon"></i>Deshbord</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="logout.php">Logout</a>
+                            <a class="nav-link " href="logout.php"><i class="fa-solid fa-door-closed header_icon"></i>Logout</a>
                         </li>
                      
                     </ul>
@@ -88,8 +88,9 @@
        
 
     <div class="about_div">
+        
+        <button id="close_admin"><i class="fa-solid fa-reply fa-fade"></i></button>
             <div class="about_details">
-
                 <div class="about_details_photo">
                     <div class="img_div">
 
@@ -107,70 +108,100 @@
 
                         <a class="btnn" href="feedback/Feedbacks.php">FEEDBACK</a>
                         <a class="btnn" href="logout.php">LOGOUT</a>
-                        <a class="btnn" id="stat" href="bookinstatus.php">BOOKING STATUS</a>
+                        <!-- <a class="btnn" id="stat" href="bookinstatus.php">BOOKING STATUS</a> -->
+
                     </div>
                 </div>
             </div>
 
-            <div class="about_cards">
-                <?php
-                while ($result = mysqli_fetch_array($cars)) {
+      
 
+         
+     <div class="DASHBORD_TABLE">
+         <h1 class="text-center mb-5">BOOKING STATUS</h1>
+         <table>
+             <thead>
+                        <th>Sno.</th>
+                        <th>Car Name</th>
+                        <!-- <th>Fuel Type</th> -->
+                        <th>Duration</th>
+                        <th>Price</th>
+                        <th>Place</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                        <th>Status</th>
+            </thead>
+            <tbody>
+                
 
-                ?>
-                    <div class="about_card_div">
-                        <div class="about_card">
-                            <div class="about_card_img">
-
-                                <img src="images/<?php echo $result['CAR_IMG'] ?>" alt="mycar">
-                            </div>
-
-
-                            <?php $res = $result['CAR_ID']; ?>
-
-                            <div class="card_text">
-                                <div>
-                                    <p><?php echo $result['CAR_NAME'] ?></p>
-                                    <p>CAPACITY : <?php echo $result['CAPACITY'] ?></p>
-                                </div>
-                                <div>
-
-                                    <p>Fuel Type : <?php echo $result['FUEL_TYPE'] ?></p>
-                                    <p>Rent Per Day : ₹<?php echo $result['PRICE'] ?>/-</p>
-                                </div>
-
-                            </div>
-
-
-                            <a class="btn" type="submit" name="booknow" class="utton" href="booking.php?id=<?php echo $res; ?>">Book</a>
-
-
-                        </div>
-                    </div>
-
-                <?php
-                }
-
-                ?>
             <?php
+            
+            
+
+            $book_sql = "select * from booking where EMAIL='$value'";
+            $book_name = mysqli_query($con, $book_sql);
+            // $book_rows = mysqli_fetch_assoc($book_name);
+
+            $count = 1;
+            
+            while ($book_result = mysqli_fetch_array($book_name)) {
+    
+                echo '<tr>
+                <td>'.$count.'</td>
+                <td>'.$book_result["CAR_NAME"].'</td>
+                <td>'.$book_result["DURATION"].'- days</td>
+                <td> &#8377;'.$book_result["PRICE"].' </td>
+                <td>'.$book_result["BOOK_PLACE"].'</td>
+                <td>'.$book_result["DESTINATION"].'</td>
+                <td>'.$book_result["BOOK_DATE"].'</td>
+                <td>'.$book_result["BOOK_STATUS"].'</td>
+            </tr>';
+
+            $count++;
+
+            }
 
 
 
+        
 
-        } else {
-            header("Location: login.php");
-        }
-
+            
+            
             ?>
 
 
-            </div>
+
+                 <!-- <tr>
+                    <td>1</td>
+                    <td>MY CAR</td>
+                    <td>deisel</td>
+                    <td>7</td>
+                    <td> &#8377; 4500</td>
+                    <td>Gwalior</td>
+                    <td>26-05-024</td>
+                </tr> -->
+
+
+            </tbody>
+        </table>
 
 
 
+     </div>
+        
+
+
+
+            <?php
+
+                } else {
+                   header("Location: login.php");
+                }
+
+             ?>
 
             
-        </div>
+</div>
 
 
        
@@ -181,10 +212,19 @@
     <!-- main  end   -->
 
 
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+
+    <script>
+      let close_admin = document.getElementById("close_admin");
+      let about_details = document.getElementsByClassName("about_details");
+      close_admin.addEventListener("click", ()=>{
+    
+        about_details[0].classList.toggle("left");
+
+
+      });
+    </script>
 </body>
 
 </html>

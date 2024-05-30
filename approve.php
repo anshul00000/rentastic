@@ -16,7 +16,7 @@ if($carresult['AVAILABLE']=='Y')
 if($res['BOOK_STATUS']=='APPROVED' || $res['BOOK_STATUS']=='RETURNED')
 {
     echo '<script>alert("ALREADY APPROVED")</script>';
-    echo '<script> window.location.href = "adminbook.php";</script>';
+    echo '<script> window.location.href = "admin_book_.php";</script>';
 }
 else{
     $query="UPDATE booking set  BOOK_STATUS='APPROVED' where BOOK_ID=$bookid";
@@ -41,12 +41,12 @@ else{
     // {
     // echo "Email sending failed!";
     // }
-    echo '<script> window.location.href = "adminbook.php";</script>';
+    echo '<script> window.location.href = "admin_book_.php";</script>';
 }  
 }
 else{
     echo '<script>alert("CAR IS NOT AVAILABLE")</script>';
-    echo '<script> window.location.href = "adminbook.php";</script>';
+    echo '<script> window.location.href = "admin_book_.php";</script>';
 }
 
 

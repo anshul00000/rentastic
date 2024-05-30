@@ -1,3 +1,15 @@
+
+<?php
+
+
+    session_start();
+   if( $_SESSION['admin_id']){
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -380,3 +392,14 @@ $num=mysqli_num_rows($queryy);
 
 </body>
 </html>
+
+
+<?php
+
+
+}else{
+  header("location:adminlogin.php");
+
+ }
+
+?>

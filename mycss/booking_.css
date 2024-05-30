@@ -1,0 +1,226 @@
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+div.main{
+
+    /* width: 400px; */
+    width: 90%;
+    margin: 100px auto 0px auto;
+    box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+
+}
+.btnn{
+    width: 100%;
+    height: 40px;
+    background-color: rgb(230, 230, 230);
+    /* background: #ff7200; */
+    border:none;
+    margin-top: 30px;
+    /* margin-left: 30px; */
+    font-size: 18px;
+    border-radius: 10px 10%;
+    cursor: pointer;
+    color:black;
+    border-bottom: 2px solid rgb(0, 0, 0);
+
+    /* transition: 0.4s ease; */
+}
+
+.btnn:hover{
+    /* background: transparent; */
+    background-color: cadetblue;
+    color: white;
+    /* color:black; */
+    /* border-bottom: 2px solid black; */
+}
+
+/* .btnn a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+} */
+
+h2{
+    text-align: center;
+    padding: 20px;
+    font-family: sans-serif;
+
+}
+div.register{
+    /* background-color: rgba(50, 147, 68, 0.745); */
+    width: 80%;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.3);
+    /* box-shadow: 2px 2px 15px rgba(0,0,0,0.3); */
+    box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993;
+
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+form#register{
+    margin: 40px;
+
+}
+
+label{
+    /* font-family: sans-serif; */
+     margin-bottom: 10px;
+    font-size: 18px;
+    /* font-style: italic; */
+}
+
+input#name{
+    /* width:300px; */
+    width: 100%;
+    border:1px solid #ddd;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+    background-color: #ffffff00;
+    box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+input#dfield{
+    /* width:300px; */
+    width: 100%;
+    border:1px solid #ddd;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+    background-color: #ffffff00;
+    box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+input#datefield{
+    /* width:300px; */
+    width: 100%;
+    border:1px solid #ddd;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+    background-color: #ffffff00;
+    box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.hai{
+    width: 100%;
+    height: 0px;
+    
+    
+}
+/* .main{
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0)50%, rgba(0,0,0,0)50%);
+    background-position: center;
+    background-size: cover;
+    
+  
+} */
+/* .navbar{
+    width: 1200px;
+    height: 75px;
+    margin: auto;
+} */
+
+.icon{
+    width:200px;
+    float: left;
+    height : 70px;
+}
+
+.logo{
+    color: black;
+    font-size: 35px;
+    font-family: Arial;
+    padding-left: 20px;
+    float:left;
+    padding-top: 10px;
+
+}
+/* .menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+
+} */
+/* 
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 80px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: black;
+
+}
+
+ul li a{
+    text-decoration: none;
+    color:white;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+
+} */
+/* 
+.btnn{
+    width:100%;
+    background: #ffffff;
+
+    border:none;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color:black;
+    transition: 0.4s ease;
+    
+
+} */
+
+.nn a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    
+}
+
+.circle{
+    border-radius:48%;
+    width:65px;
+}
+
+.phello{
+    width: 200px;
+    /* margin-left: -50px; */
+    padding: 0px;
+}

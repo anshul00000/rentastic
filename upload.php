@@ -1,5 +1,6 @@
 <?php
 if(isset($_POST['addcar']) ){
+
     require_once('connection.php');
    echo "<prev>";
    print_r($_FILES['image']);
@@ -11,8 +12,11 @@ if(isset($_POST['addcar']) ){
         $img_ex = pathinfo($img_name,PATHINFO_EXTENSION);
         $img_ex_lc= strtolower($img_ex);
         $allowed_exs = array("jpg","jpeg","png","webp","svg");
+
         if(in_array($img_ex_lc,$allowed_exs)){
+            
             $new_img_name=uniqid("IMG-",true).'.'.$img_ex_lc;
+
             $img_upload_path='images/'.$new_img_name;
             move_uploaded_file($tmp_name,$img_upload_path);
 
@@ -26,7 +30,7 @@ if(isset($_POST['addcar']) ){
                 $res=mysqli_query($con,$query);
                 if($res){
                     echo '<script>alert("New Car Added Successfully!!")</script>';
-                    echo '<script> window.location.href = "adminvehicle.php";</script>';                }
+                    echo '<script> window.location.href = "admin_vehicle_.php";</script>';                }
 
         }else{
             echo '<script>alert("Cant upload this type of image")</script>';

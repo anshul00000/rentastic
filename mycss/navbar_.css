@@ -1,9 +1,17 @@
 /*   navbar css and starter css*/
 
+
+@font-face{
+  font-family: "Kapiler";
+  src:url(font.ttf);
+}
+
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
   
   :root {
@@ -19,6 +27,7 @@
   
   ::-webkit-scrollbar-track{
     background:var(--bgcolor);
+    /* background-color: rgb(0, 255, 217); */
   }
   ::-webkit-scrollbar-thumb {
   
@@ -55,12 +64,19 @@
     top: 0;
     left: 0;
   }
-  
+  .header_icon{
+    margin-right: 20px;
+  }
   nav a {
     /* font-size: 18px; */
     color: var(--textcolor) !important;
     margin-left: 20px;
     padding: 5px 20px !important;
+  }
+
+  nav a:hover{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
   }
   
   .active {
@@ -82,18 +98,27 @@
   .brand_name {
     /* color: var(--textcolor); */
     /* color: rgb(255, 0, 0) !important; */
-    letter-spacing: 2vw;
+    letter-spacing: 1vw;
     text-shadow: 1px 0px var(--textcolor);
+    font-family: Kapiler  !important;
     
   }
 
   .brand_name_1{
     backdrop-filter: blur(10px);
    -webkit-backdrop-filter:blur(10px) ;
-    background-color: rgba(39, 79, 144, 0.4);
+    /* background-color: rgba(39, 79, 144, 0.4); */
     border-radius: 10% 5px  ;
+    font-family: Kapiler  !important;
+    /* font-weight: 900; */
+
   }
   
+
+  .font{
+    font-family: "Kapiler"  !important;
+
+  }
   
   .nav_manu_togal button {
     background-color: rgb(0, 255, 229);

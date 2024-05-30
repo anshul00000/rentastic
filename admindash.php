@@ -302,7 +302,7 @@ $num=mysqli_num_rows($queryy);
                 <?php
                 
                 
-                while($res=mysqli_fetch_array($queryy)){
+                while($res = mysqli_fetch_array($queryy)){
                 
                 
                 ?>

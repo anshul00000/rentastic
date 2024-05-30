@@ -1,0 +1,119 @@
+
+
+:root {
+    --bgcolor: #dde1e7;
+    --textcolor: rgb(0, 0, 0);
+   }
+
+
+
+
+.admin_dash{
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+    width: 100%;
+    padding-top: 60px;
+    /* background-color: blue; */
+}
+
+
+.admin_active{
+    background-color: rgba(255, 0, 0, 0) !important;
+    border: 1px solid black;
+}
+
+
+.admin_dash_cards{
+    /* background-color: aquamarine; */
+    /* padding-left: 100px;             */
+                   /*  for rensponsive */
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    
+   
+}
+
+
+.admin_dash_card_P{
+    position: relative;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    /* background-color: rgba(0, 187, 255, 0.112); */
+    border: 5px solid rgba(0, 0, 0, 0.244);
+    box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993;
+    
+}
+
+
+.admin_dash_card_c{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    /* background-color: rgb(0, 255, 102); */
+    background-color: var(--bgcolor);
+    box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993 !important;
+
+
+}
+
+
+.admin_dash_card_c h1{
+
+    font-size: 6rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.admin_dash_card{
+    background-color: rgba(74, 64, 64, 0.07);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.admin_card_btn_div{
+
+    /* background-color: aqua; */
+    position: relative;
+    margin: 0px 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.admin_card_btn_div button{
+
+    background-color: rgba(127, 255, 212, 0);
+    border: none;
+    box-shadow: -5px -5px 9px #ffffff61 , 5px 5px 7px #5e687993;
+    padding: 5px 100px;
+    margin-bottom: 20px;
+}
+
+.admin_card_btn_div button:hover{
+    box-shadow:inset -5px -5px 9px #ffffff61 ,inset 5px 5px 7px #5e687993 !important;
+
+}
+
+
+.admin_card_btn_div p{
+    background-color: rgba(24, 170, 121, 0.826);
+    /* border: 1px solid black; */
+    /* padding: 2px 40px; */
+}
