@@ -2,6 +2,7 @@
   <head>
     
   </head>
+
             <style>
             body {
                 text-align: center;
@@ -26,7 +27,7 @@
             margin: 0;
             }
             i {
-                color: #9ABC66;
+                color: green;
                 font-size: 100px;
                 line-height: 200px;
                 margin-left:-15px;
@@ -48,7 +49,7 @@
             #back{
                 width: 150px;
                 height: 40px;
-                background: #ff7200;
+                background: aqua;
                 border:none;
                 margin-top: 10px;
                 margin-left: 65px;
@@ -66,7 +67,13 @@
                 width: 1px;
                 
             }
+
             </style>
+
+
+           
+
+
     <body>
        
       <div class="card">
@@ -75,8 +82,21 @@
       </div>
         <h1>Success</h1> 
         <p>We received your rental request;<br/> we'll be in touch shortly!</p>
-        <div class="ba"><button id="back"><a href="cardetails.php">Search Cars</a></button></div>
+        <div class="ba"><button id="back"><a href="index.php">Search Cars</a></button></div>
         
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     </body>
 </html>

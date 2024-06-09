@@ -19,25 +19,28 @@ div.main{
 
 }
 .btnn{
-    width: 100%;
+    width: 250px;
     height: 40px;
-    background-color: rgb(230, 230, 230);
+    background-color: cadetblue;
+
+    /* background-color: rgb(230, 230, 230); */
     /* background: #ff7200; */
     border:none;
     margin-top: 30px;
     /* margin-left: 30px; */
     font-size: 18px;
-    border-radius: 10px 10%;
+    /* border-radius: 10px 10%; */
     cursor: pointer;
-    color:black;
-    border-bottom: 2px solid rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
+    /* border: 2px solid rgb(0, 0, 0); */
+    margin-bottom: 20px;
 
     /* transition: 0.4s ease; */
 }
 
 .btnn:hover{
     /* background: transparent; */
-    background-color: cadetblue;
+    background-color: rgb(36, 196, 202);
     color: white;
     /* color:black; */
     /* border-bottom: 2px solid black; */
@@ -79,33 +82,36 @@ form#register{
 
 }
 
-label{
-    /* font-family: sans-serif; */
+/* label{
+
      margin-bottom: 10px;
     font-size: 18px;
-    /* font-style: italic; */
-}
+} */
 
-input#name{
+input.name{
     /* width:300px; */
     width: 100%;
-    border:1px solid #ddd;
+    border:1px solid #000000;
     border-radius: 3px;
     outline: 0;
     padding: 7px;
-    background-color: #ffffff00;
-    box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3);
+    background-color: #00000000;
+    /* box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3); */
 }
 
 input#dfield{
     /* width:300px; */
     width: 100%;
-    border:1px solid #ddd;
+    border:1px solid #000000;
     border-radius: 3px;
     outline: 0;
     padding: 7px;
     background-color: #ffffff00;
-    box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3);
+    /* box-shadow:inset 1px 1px 5px rgba(0,0,0,0.3); */
+}
+
+input:focus{
+    background-color: rgba(255, 0, 0, 0) !important;
 }
 
 input#datefield{

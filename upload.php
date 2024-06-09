@@ -1,6 +1,8 @@
 <?php
 if(isset($_POST['addcar']) ){
-
+    session_start();
+          
+  
     require_once('connection.php');
    echo "<prev>";
    print_r($_FILES['image']);
@@ -22,11 +24,15 @@ if(isset($_POST['addcar']) ){
 
                 $carname=mysqli_real_escape_string($con,$_POST['carname']);
 
+                $admin =  $_SESSION['admin_email'];
+      
+                $brand=mysqli_real_escape_string($con,$_POST['brand']);
+
                 $ftype=mysqli_real_escape_string($con,$_POST['ftype']);
                 $capacity=mysqli_real_escape_string($con,$_POST['capacity']);
                 $price=mysqli_real_escape_string($con,$_POST['price']);
                 $available="Y";
-                $query="INSERT INTO cars(CAR_NAME,FUEL_TYPE,CAPACITY,PRICE,CAR_IMG,AVAILABLE) values('$carname','$ftype',$capacity,$price,'$new_img_name','$available')";
+                $query="INSERT INTO cars(ADMIN,CAR_NAME,BRAND,FUEL_TYPE,CAPACITY,PRICE,CAR_IMG,AVAILABLE) values('$admin','$carname','$brand','$ftype',$capacity,$price,'$new_img_name','$available')";
                 $res=mysqli_query($con,$query);
                 if($res){
                     echo '<script>alert("New Car Added Successfully!!")</script>';

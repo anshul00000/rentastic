@@ -9,7 +9,16 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
    <!-- <link  rel="stylesheet" href="mycss/style.css"> -->
    <link  rel="stylesheet" href="mycss/navbar_.css">
+   <link rel="stylesheet" href="mycss/booking_.css">
  
+
+   <script type="text/javascript">
+    window.history.forward();
+
+    function noBack() {
+      window.history.forward();
+    }
+  </script>
 
     <script type="text/javascript">
         function preventBack() {
@@ -21,7 +30,6 @@
         window.onunload = function () { null };
     </script>
 
-      <link rel="stylesheet" href="mycss/booking_.css">
 
 
 </head>
@@ -30,6 +38,9 @@
 <?php 
 
     require_once('connection.php');
+
+    include 'otp.php';                    // THIS IS REQURED BY OTP 
+    
     session_start();
      
     // session_start();
@@ -70,8 +81,6 @@
         else{
             if($bdate<$rdate){
 
-
-
             $price=($dur*$carprice);
             $sql="insert into booking (CAR_ID,CAR_NAME,EMAIL,BOOK_PLACE,BOOK_DATE,DURATION,PHONE_NUMBER,DESTINATION,PRICE,RETURN_DATE) values($carid, '$carname ','$uemail','$bplace','$bdate',$dur,$phno,'$des',$price,'$rdate')";
             $result = mysqli_query($con,$sql);
@@ -79,7 +88,19 @@
             if($result){
                 
                 $_SESSION['email'] =$uemail;
-                header("Location: payment.php");
+     
+                 
+                $email = "anshulchaurasiya05@gmail.com";
+                $name = "Anshul Chaurasiya";
+                
+
+                 
+              sendOTP_provider($email, $name , $carname , $bplace , $phno ,  $rdate);
+                
+
+              header("Location: psucess.php");
+
+                // header("Location: payment.php");
             }
             else{
                 echo '<script>alert("please check the connection")</script>';
@@ -176,21 +197,66 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
          <div class="main"> 
         
         <div class="register">
             <h2>BOOKING</h2>
-        <form id="register" method="POST"  >
+            <h3 class="mb-3">For : <?php echo "".$email['CAR_NAME']?></h3>
+
+
+
+
+
+
+
+            <form class="row g-3 ps-5 pe-5"  method="POST" >
+  <div class="col-md-6">
+    <label  for="" class="form-label">PLACE :</label>
+    <input name="place" type="text" class="form-control name" >
+  </div>
+
+  <div class="col-md-6">
+    <label for="" class="form-label">DATE : </label>
+    <input  name="date"  type="date" class="form-control name" >
+  </div>
+
+  <div class="col-md-6">
+    <label  for="" class="form-label">DURATION :</label>
+    <input  name="dur" type="number" min="1" max="30" class="form-control name" >
+  </div>
+
+  <div class="col-md-6">
+    <label for="" class="form-label">PHONE NUMBER :</label>
+    <input type="tel" name="ph" maxlength="10" class="form-control name" >
+  </div>
+
+  <div class="col-md-6">
+    <label for="" class="form-label">DESTINATION :</label>
+    <input type="text" name="des"  maxlength="10" class="form-control name">
+  </div>
+
+  <div class="col-md-6">
+    <label for="dfield" class="form-label">Return date :</label>
+    <input type ="date" name="rdate" id="dfield" class="name"  min='1899-01-01' class="form-control" >
+  </div>
+
+
+  <div class="col-12">
+    <button type="submit"  value="BOOK" name="book" class="btn btn-primary btnn">Submit</button>
+  </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <form id="register" method="POST"  >
             <h2>CAR NAME : <?php echo "".$email['CAR_NAME']?></h2>
             <label>BOOKING PLACE : </label>
             <br>
@@ -229,7 +295,10 @@
             <br><br>
             <input type="submit"  class="btnn" value="BOOK" name="book" >
             
-        </form>
+        </form> -->
+
+
+
         </div>
     </div>
     

@@ -137,7 +137,8 @@
     #REUSED STYLE
   \*-----------------------------------*/
   
-  .container { padding-inline: 15px; }
+  .container { padding-inline: 15px;
+  margin-top: 50px; }
   
   button, a { transition: var(--transition); }
   

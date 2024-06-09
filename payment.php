@@ -37,7 +37,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background:orange url("images/paym.jpg") center/cover;
+  /* background:orange url("images/paym.jpg") center/cover; */
   overflow: hidden;
 }
 
@@ -80,7 +80,7 @@ body {
   border: none;
   border-bottom: dashed 0.2rem rgba(255, 255, 255, 0.15);
   font-size: 1.2rem;
-  color: #fff;
+  color: black;
   text-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
 }
 .card__input--large {
@@ -88,7 +88,7 @@ body {
 }
 
 .card__input::placeholder {
-  color: rgba(255, 255, 255, 1);
+  color: black;
   text-shadow: none;
 }
 
@@ -99,7 +99,7 @@ body {
 
 .card__label {
   display: block;
-  color: #fff;
+  color: black;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
   font-weight: 400;
 }
@@ -114,7 +114,7 @@ body {
 
 .card__brand {
   font-size: 3rem;
-  color: #fff;
+  color: black;
   min-width: 100px;
   min-height: 75px;
   text-align: right;
@@ -137,14 +137,15 @@ body {
   
 .pay{
   width:200px;
-  background: #ff7200;
+  /* background: #ff7200; */
+  background: linear-gradient(270deg, #1caba2 20%, #1c7fab);
 
   border:none;
   height: 40px;
   font-size: 18px;
   border-radius: 5px;
   cursor: pointer;
-  color:white;
+  color:black;
   transition: 0.4s ease;
   margin-left: 100px;
  
@@ -162,14 +163,15 @@ body {
 
 .btn{
   width:200px;
-  background: #ff7200;
-
+  /* background: #ff7200; */
+  background: linear-gradient(270deg, #1caba2 20%, #1c7fab);
+   
   border:none;
   height: 40px;
   font-size: 18px;
   border-radius: 5px;
   cursor: pointer;
-  color:white;
+  color:black;
   transition: 0.4s ease;
  
   
@@ -180,7 +182,7 @@ body {
 
 .btn a{
   text-decoration: none;
-  color: white;
+  color: black;
   font-weight: bold;
   
 }

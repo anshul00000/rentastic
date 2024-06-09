@@ -6,6 +6,15 @@
   src:url(font.ttf);
 }
 
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('../file.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 
 *{
     padding: 0;
@@ -87,7 +96,8 @@
   .offcanvas-header{
     /* background-color: var(--bgcolor); */
     background-color: rgba(23, 39, 72, 0.43) !important;
-    backdrop-filter: blur(100px);
+     backdrop-filter: blur(100px);
+     -webkit-backdrop-filter: blur(100px) !important;
   }
   .offcanvas-body{
    backdrop-filter: blur(10px);
@@ -100,7 +110,7 @@
     /* color: rgb(255, 0, 0) !important; */
     letter-spacing: 1vw;
     text-shadow: 1px 0px var(--textcolor);
-    font-family: Kapiler  !important;
+    font-family:" Kapiler " !important;
     
   }
 
@@ -116,7 +126,9 @@
   
 
   .font{
-    font-family: "Kapiler"  !important;
+    /* font-family: "Kapiler"  !important; */
+    font-family: 'MyCustomFont' , 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif  !important;
+
 
   }
   

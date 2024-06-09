@@ -2,13 +2,23 @@
 <?php
 
 session_start();
+require_once('connection.php');
 if(isset($_GET['id'])){
     $_SESSION['admin_id'] = $_GET['id'];
+
+    $value = $_SESSION['admin_id'];
+    $sql = "select * from admin where ADMIN_ID ='$value'";
+    $name = mysqli_query($con, $sql);
+    $rows = mysqli_fetch_assoc($name);
+
+
+    $_SESSION['admin_email'] = $rows['EMAIL'];
+
+    
 }
 if($_SESSION['admin_id'] or isset($_GET['id'])){
     
     // echo $_GET['id']."aa gya bhai ";
-    require_once('connection.php');
 
     // if(isset($_GET['id'])){
     //     $_SESSION['admin_id'] = $_GET['id'];
@@ -21,7 +31,7 @@ if($_SESSION['admin_id'] or isset($_GET['id'])){
         $name = mysqli_query($con, $sql);
         $rows = mysqli_fetch_assoc($name);
     
-
+  
 
 
 ?>
