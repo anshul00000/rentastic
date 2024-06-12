@@ -63,6 +63,7 @@
 
     $carname  =  $email['CAR_NAME'] ;
     
+    $admin_email_id = $email['ADMIN'] ; 
 
 
     if(isset($_POST['book'])){
@@ -82,7 +83,9 @@
             if($bdate<$rdate){
 
             $price=($dur*$carprice);
-            $sql="insert into booking (CAR_ID,CAR_NAME,EMAIL,BOOK_PLACE,BOOK_DATE,DURATION,PHONE_NUMBER,DESTINATION,PRICE,RETURN_DATE) values($carid, '$carname ','$uemail','$bplace','$bdate',$dur,$phno,'$des',$price,'$rdate')";
+
+            $sql="insert into booking (CAR_ID,OWNER_ID, CAR_NAME,EMAIL,BOOK_PLACE,BOOK_DATE,DURATION,PHONE_NUMBER,DESTINATION,PRICE,RETURN_DATE) values($carid,'$admin_email_id' ,'$carname ','$uemail','$bplace','$bdate',$dur,$phno,'$des',$price,'$rdate')";
+            
             $result = mysqli_query($con,$sql);
             
             if($result){
@@ -202,6 +205,7 @@
         <div class="register">
             <h2>BOOKING</h2>
             <h3 class="mb-3">For : <?php echo "".$email['CAR_NAME']?></h3>
+            <!-- <h3 class="mb-3">For : <?php echo "".$email['ADMIN']?></h3> -->
 
 
 

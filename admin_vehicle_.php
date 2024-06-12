@@ -109,8 +109,11 @@ a{
 
             <?php
 
-          require_once('connection.php');
-           $query="SELECT *from cars";    
+        //   require_once('connection.php');
+
+           $admin_email_id =  $rows['EMAIL'];
+           $query="SELECT *from cars where ADMIN ='$admin_email_id'";   
+           
          $queryy=mysqli_query($con,$query);
           $num=mysqli_num_rows($queryy);
 
@@ -133,7 +136,7 @@ a{
             <tbody>
             <?php
                 
-                
+               if($num >0 ) {
                 while($res=mysqli_fetch_array($queryy)){
                 
                 
@@ -161,7 +164,19 @@ a{
                     <td><a href="deletecar.php?id=<?php echo $res['CAR_ID']?>"><button style="color:red" type="submit" class="btn" name="approve">DELETE CAR</button></a></td>
     
                 </tr>
-               <?php } ?>
+               <?php } }else{
+
+              echo' <tr>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+               </tr>';
+
+               } ?>
             </tbody>
         </table>
 

@@ -23,7 +23,8 @@
     position:fixed;
     /* z-index: 999; */
     /* left: -100%; */
-    left: -100%;
+    left: -20%;
+    opacity: 0;
     justify-content: center;                                   /*  this is user dashbord   */
     align-items: center;
     flex-direction: column;
@@ -32,12 +33,14 @@
     height:100vh ;
     /* background-color: rgb(54, 54, 54); */
     background-color: rgb(128, 129, 132);
-    transition: all ease-in-out 1s ;
+    transition: all ease-in-out 0.5s ;
      z-index: 800;
   }
 
   .left{
-    left: 0%;
+    left : 0%; 
+    opacity: 1;
+
   }
 
 #close_admin{

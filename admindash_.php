@@ -125,22 +125,25 @@ if($_SESSION['admin_id'] or isset($_GET['id'])){
             
             $value = $_SESSION['admin_id'];
             // $_SESSION['admin_id'] = $value;
+
+            $admin_email = $rows["EMAIL"];
     
-            $cars_sql = "SELECT *from cars";
+            $cars_sql = "SELECT *from cars where ADMIN ='$admin_email'";
             $cars_name = mysqli_query($con, $cars_sql);
             $cars_rows = mysqli_num_rows($cars_name);
 
             // echo  $cars_rows ; 
             
 
-             $book_query="SELECT *from booking ORDER BY BOOK_ID DESC";    
+            //  $book_query="SELECT *from booking ORDER BY BOOK_ID DESC where OWNER_ID ='$value'";    
+             $book_query="SELECT *from booking where OWNER_ID ='$admin_email'";    
              $book_queryy=mysqli_query($con,$book_query);
              $book_num=mysqli_num_rows($book_queryy);
 
             // echo $book_num; 
 
 
-            $feedback_query="select *from feedback";
+            $feedback_query="select *from feedback ";
             $feedback_queryy=mysqli_query($con,$feedback_query);
             $feedback_num=mysqli_num_rows($feedback_queryy);
             

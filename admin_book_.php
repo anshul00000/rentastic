@@ -109,8 +109,12 @@ session_start();
             
             <?php
 
-            require_once('connection.php');
-            $query="SELECT *from booking ORDER BY BOOK_ID DESC";    
+            // require_once('connection.php');
+            $admin_email_id =  $rows['EMAIL'];
+
+            // $query="SELECT *from cars where ADMIN ='$admin_email_id'";   
+
+            $query="SELECT * from booking where OWNER_ID ='$admin_email_id'";    
             $queryy=mysqli_query($con,$query);
             $num=mysqli_num_rows($queryy);
 
@@ -143,6 +147,9 @@ session_start();
             <?php
                 
                 
+
+                if($num >0 ){
+
                 while($res=mysqli_fetch_array($queryy)){
                 
                 
@@ -162,7 +169,27 @@ session_start();
                     <td><a href="approve.php?id=<?php echo $res['BOOK_ID']?>"><button type="submit"  class="but"  name="approve">APPROVE</button></a></td>
                     <td><a href="adminreturn.php?id=<?php echo $res['CAR_ID']?>&bookid=<?php echo $res['BOOK_ID']?>"><button type="submit" class="but" name="approve">RETURNED</button></a></td>
                 </tr>
-               <?php } ?>
+               <?php } }else{
+
+   echo '<tr>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+                <td style="color:red">NA</td>
+               </tr>
+
+
+   ';
+
+                }?>
 
 
 

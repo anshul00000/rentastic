@@ -141,9 +141,9 @@
             $book_sql = "select * from booking where EMAIL='$value'";
             $book_name = mysqli_query($con, $book_sql);
             // $book_rows = mysqli_fetch_assoc($book_name);
-
+            $num = mysqli_num_rows($book_name);
             $count = 1;
-            
+            if( $num > 0 ){
             while ($book_result = mysqli_fetch_array($book_name)) {
     
                 echo '<tr>
@@ -159,6 +159,11 @@
 
             $count++;
 
+            } }
+            else{
+                echo '<tr>
+                <td colspan="8" class="text-center">NO BOOKING FOUND</td>
+            </tr>';
             }
 
 
