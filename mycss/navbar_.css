@@ -110,7 +110,8 @@
     /* color: rgb(255, 0, 0) !important; */
     letter-spacing: 1vw;
     text-shadow: 1px 0px var(--textcolor);
-    font-family:" Kapiler " !important;
+    /* font-family:" Kapiler " !important; */
+    font-family: MyCustomFont !important;
     
   }
 
@@ -119,7 +120,8 @@
    -webkit-backdrop-filter:blur(10px) ;
     /* background-color: rgba(39, 79, 144, 0.4); */
     border-radius: 10% 5px  ;
-    font-family: Kapiler  !important;
+    /* font-family: Kapiler  !important; */
+    font-family: MyCustomFont  !important;
     /* font-weight: 900; */
 
   }

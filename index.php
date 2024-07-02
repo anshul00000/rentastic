@@ -115,8 +115,8 @@
   <div class="main_hero">
     <div class="main_hero2_1">
       <!-- <img class="hero_img" src="public/mycar.svg" alt=""> -->
-      <h1 class="y_r " data-aos="zoom-out-right">Your <span style=color:orange;>Ride</span> </h1>
-      <h1 class="y_w " data-aos="zoom-out-left">Your <span class="way">Way.</span> </h1>
+      <h1 class="y_r " data-aos="zoom-out-right"><span class="font">Your</span> <span style=color:orange; class="font">Ride</span> </h1>
+      <h1 class="y_w " data-aos="zoom-out-left"><span class="font">Your</span> <span class="way font">Way.</span> </h1>
       <a href="dashbord.php">
         <button class="btn" type="submit">View Cars -> </button>
       </a>

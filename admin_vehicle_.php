@@ -56,7 +56,7 @@ session_start();
 a{
     text-decoration: none;
     /* color: white; */
-    font-weight: bolder;
+    /* font-weight: bolder; */
     
 }
      </style>
