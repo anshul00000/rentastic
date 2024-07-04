@@ -181,8 +181,8 @@ body{
 
 .back{
     position: absolute;
-    right: 5px ;
-    top: 5px;
+    left: 5px ;
+    top: 10px;
     width: 150px;
     height: 40px;   
   background: aqua;
@@ -195,11 +195,30 @@ body{
     color:var(--textcolor);
 }
 
-.back a{
+.back2{
+    position: absolute;
+    right: 5px ;
+    top: 10px;
+    width: 150px;
+    height: 40px;   
+  background: aqua;
+    border:none;
+    /* margin-top: 0px; */
+    /* margin-left:1300px; */
+    /* font-size: 18px; */
+    /* border-radius: 10px; */
+    cursor: pointer;
+    color:var(--textcolor);
+    
+}
+
+ a{
     text-decoration: none;
     color: var(--textcolor);
     font-weight: bold;
 }
+
+
 </style>
 
 
@@ -268,7 +287,9 @@ body{
 
 
 
-<button class="back"><a href="index.php">Go To Home</a></button>
+<a href="index.php"><button class="back">Go To Home</button></a>
+<a href="admin_register.php"><button class="back2">register as admin</button></a>
+<br><br><br><hr>
     <div class="helloadmin">
     <h1>HELLO ADMIN!</h1>
 </div>
