@@ -250,8 +250,8 @@ body{
                     // session_start();
                     // $_SESSION['email'] = $email;
                     // echo '<script>alert("Welcome ADMINISTRATOR!");</script>';
-                    header("location:admindash_.php?id=$id");
-                    // echo '<script> window.location.href = "admindash.php";</script>';
+                    // header("location:admindash_.php?id=$id");
+                    echo '<script> window.location.href = "admindash_.php?id='.$id.'";</script>';
                     
                 }
                 else{
