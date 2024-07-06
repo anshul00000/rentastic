@@ -95,7 +95,7 @@ session_start();
             
             
             <div class="DASHBORD_TABLE">
-         <h1 class="text-center mb-5">ADMIN_FEEDBACK</h1>
+         <h1 class="text-center mb-5">Admin Feedback</h1>
         <table>
              <thead>
                         <th>Sno.</th>

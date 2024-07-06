@@ -44,7 +44,7 @@ session_start();
     border-radius: 10% 10px ;
     display: block;
      margin: auto;
-     margin-right: 10% ;
+     margin-right: 17% ;
     cursor: pointer;
     color:#fff;
     /* transition: 0.4s ease; */
@@ -121,7 +121,7 @@ a{
               ?>
                 
                 <div class="DASHBORD_TABLE">
-                    <h1 class="text-center mb-5">ADMIN_VEHICLE</h1>
+                    <h1 class="text-center mb-5">Admin Vehicle</h1>
                     <a href="addcar.php"  ><button class="add">+ ADD CAR</button></a>
                     <table>
              <thead>

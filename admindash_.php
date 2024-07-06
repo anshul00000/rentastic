@@ -116,7 +116,7 @@ if($_SESSION['admin_id'] or isset($_GET['id'])){
             <div class="admin_dash">
 
 
-            <h1>ADMIN_DASHBORD</h1>
+            <h1>Admin Dashbord</h1>
 
 
 
