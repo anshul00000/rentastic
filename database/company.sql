@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2025 at 02:55 PM
+-- Generation Time: Oct 03, 2025 at 07:43 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,7 +41,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`ADMIN_ID`, `ADMIN_PASSWORD`, `EMAIL`, `PHONE`, `NAME`, `ADDRESS`) VALUES
-('Anshul', 'anshul@12345', 'anshulchaurasiya05@g', 2147483647, 'Anshul Chaurasiya', 'Gwalior ');
+('anshul', 'f9b34c39ed3d3dfeef3e343b11c95706', 'anshulchaurasiya05@g', 2147483647, 'Anshul Chaurasiya', 'Bhopal');
 
 -- --------------------------------------------------------
 

@@ -232,7 +232,7 @@ body{
     if(isset($_POST['adlog'])){
         $id=$_POST['adid'];
         $pass=$_POST['adpass'];
-        
+        $Pass=md5($pass);
         
         if(empty($id)|| empty($pass))
         {
@@ -244,7 +244,7 @@ body{
             $res=mysqli_query($con,$query);
             if($row=mysqli_fetch_assoc($res)){
                 $db_password = $row['ADMIN_PASSWORD'];
-                if($pass  == $db_password)
+                if($Pass  == $db_password)
                 {
                     
                     // session_start();

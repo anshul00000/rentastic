@@ -78,7 +78,7 @@ if(isset($_POST['submit']))
     
             }else{
 
-                $sql="insert into admin (ADMIN_ID,ADMIN_PASSWORD,NAME,EMAIL,PHONE,ADDRESS) values('$id','$password','$name','$email',$phone,'$address')";
+                $sql="insert into admin (ADMIN_ID,ADMIN_PASSWORD,NAME,EMAIL,PHONE,ADDRESS) values('$id','$Pass','$name','$email',$phone,'$address')";
                 $result = mysqli_query($con,$sql);
 
             }
