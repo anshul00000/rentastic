@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2024 at 01:22 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Generation Time: Oct 02, 2025 at 02:55 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,16 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `ADMIN_ID` varchar(255) NOT NULL,
-  `ADMIN_PASSWORD` varchar(255) NOT NULL
+  `ADMIN_PASSWORD` varchar(255) NOT NULL,
+  `EMAIL` varchar(20) DEFAULT NULL,
+  `PHONE` int(15) DEFAULT NULL,
+  `NAME` varchar(25) DEFAULT NULL,
+  `ADDRESS` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`ADMIN_ID`, `ADMIN_PASSWORD`) VALUES
-('ADMIN', 'ADMIN'),
-('anshul', 'anshul');
+INSERT INTO `admin` (`ADMIN_ID`, `ADMIN_PASSWORD`, `EMAIL`, `PHONE`, `NAME`, `ADDRESS`) VALUES
+('Anshul', 'anshul@12345', 'anshulchaurasiya05@g', 2147483647, 'Anshul Chaurasiya', 'Gwalior ');
 
 -- --------------------------------------------------------
 
@@ -57,19 +60,9 @@ CREATE TABLE `booking` (
   `DESTINATION` varchar(255) NOT NULL,
   `RETURN_DATE` date NOT NULL,
   `PRICE` int(11) NOT NULL,
-  `BOOK_STATUS` varchar(255) NOT NULL DEFAULT 'UNDER PROCESSING'
+  `BOOK_STATUS` varchar(255) NOT NULL DEFAULT 'UNDER PROCESSING',
+  `OWNER_ID` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `booking`
---
-
-INSERT INTO `booking` (`BOOK_ID`, `CAR_ID`, `EMAIL`, `BOOK_PLACE`, `BOOK_DATE`, `DURATION`, `PHONE_NUMBER`, `DESTINATION`, `RETURN_DATE`, `PRICE`, `BOOK_STATUS`) VALUES
-(73, 2, 'anil@gmail.com', 'gwalior', '2024-04-08', 5, 6266842027, 'TIKAMGARH', '2024-04-16', 35000, 'UNDER PROCESSING'),
-(74, 3, 'anil@gmail.com', 'gwalior', '2024-04-08', 7, 6266842027, 'TIKAMGARH', '2024-05-01', 21000, 'APPROVED'),
-(76, 2, 'anil@gmail.com', 'gwalior', '2024-04-08', 2, 8964049390, 'TIKAMGARH', '2024-04-24', 14000, 'APPROVED'),
-(77, 1, 'anshulchaurasiya05@gmail.com', 'gwalior', '2024-04-19', 3, 6266842027, 'gwalior', '2024-04-22', 15000, 'RETURNED'),
-(79, 1, 'anshulchaurasiya05@gmail.com', '444', '2024-04-19', 3, 4444444444, 'TIKAMGARH', '2024-04-25', 15000, 'UNDER PROCESSING');
 
 -- --------------------------------------------------------
 
@@ -80,24 +73,28 @@ INSERT INTO `booking` (`BOOK_ID`, `CAR_ID`, `EMAIL`, `BOOK_PLACE`, `BOOK_DATE`, 
 CREATE TABLE `cars` (
   `CAR_ID` int(11) NOT NULL,
   `CAR_NAME` varchar(255) NOT NULL,
+  `BRAND` varchar(20) DEFAULT NULL,
   `FUEL_TYPE` varchar(255) NOT NULL,
   `CAPACITY` int(11) NOT NULL,
   `PRICE` int(11) NOT NULL,
   `CAR_IMG` varchar(255) NOT NULL,
-  `AVAILABLE` varchar(255) NOT NULL
+  `AVAILABLE` varchar(255) NOT NULL,
+  `ADMIN` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cars`
 --
 
-INSERT INTO `cars` (`CAR_ID`, `CAR_NAME`, `FUEL_TYPE`, `CAPACITY`, `PRICE`, `CAR_IMG`, `AVAILABLE`) VALUES
-(1, 'FERRAI', 'PETROL', 5, 5000, 'ferrari.jpg', 'Y'),
-(2, 'LAMBORGINI', 'DEISEL', 6, 7000, 'lamborghini.webp', 'y'),
-(3, 'PORSCHE', 'GAS', 4, 3000, 'porsche.jpg', 'y'),
-(20, 'SWIFT', 'DEISEL', 22, 1000, 'IMG-6239c94ea8a4a0.51789849.jpg', 'Y'),
-(22, 'bularo', 'water', 200, 200000, 'IMG-660fe814446191.21169792.jpg', 'Y'),
-(25, 'kkkkkkkkkkk', 'csssss', 122, 33232, 'IMG-6610e9a8466b99.63262515.webp', 'Y');
+INSERT INTO `cars` (`CAR_ID`, `CAR_NAME`, `BRAND`, `FUEL_TYPE`, `CAPACITY`, `PRICE`, `CAR_IMG`, `AVAILABLE`, `ADMIN`) VALUES
+(28, 'Thar', 'Mahindra', 'Electric', 6, 4999, 'IMG-68de7251873b13.36027691.jpg', 'Y', 'anshulchaurasiya05@g'),
+(29, 'Scorpio', 'Mahindra', 'Diesel', 6, 4999, 'IMG-68de72e47e8f55.53201079.png', 'Y', 'anshulchaurasiya05@g'),
+(30, 'Swift', 'maruti suzuki', 'Petrol ', 4, 2999, 'IMG-68de7350556ce7.43881890.webp', 'Y', 'anshulchaurasiya05@g'),
+(31, 'Tiago ', 'tata', 'Petrol', 6, 3999, 'IMG-68de7416718654.75703555.png', 'Y', 'anshulchaurasiya05@g'),
+(32, 'nissan ', 'nissan ', 'Diesel', 7, 5999, 'IMG-68de751c796ef1.11374821.png', 'Y', 'anshulchaurasiya05@g'),
+(33, 'Carens', 'kia ', 'Petrol ', 5, 4999, 'IMG-68de75a97c43f1.11118752.png', 'Y', 'anshulchaurasiya05@g'),
+(34, 'I20', 'hyundai', 'Diesel', 4, 2999, 'IMG-68de75e3c20b58.91433058.png', 'Y', 'anshulchaurasiya05@g'),
+(35, 'Nisan ', 'nisan', 'Diesel', 7, 5999, 'IMG-68de76346b5286.12460613.png', 'Y', '');
 
 -- --------------------------------------------------------
 
@@ -110,16 +107,6 @@ CREATE TABLE `feedback` (
   `EMAIL` varchar(255) NOT NULL,
   `COMMENT` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `feedback`
---
-
-INSERT INTO `feedback` (`FED_ID`, `EMAIL`, `COMMENT`) VALUES
-(11, 'anil@gmail.com', 'this is demo feedback'),
-(12, 'anil@gmail.com', 'this is second feedback\r\n'),
-(13, 'anil@gmail.com', 'this is third feedback\r\n'),
-(14, 'anil@gmail.com', 'this is forth frrdback\r\n');
 
 -- --------------------------------------------------------
 
@@ -135,16 +122,6 @@ CREATE TABLE `payment` (
   `CVV` int(11) NOT NULL,
   `PRICE` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `payment`
---
-
-INSERT INTO `payment` (`PAY_ID`, `BOOK_ID`, `CARD_NO`, `EXP_DATE`, `CVV`, `PRICE`) VALUES
-(26, 73, '8888888888888888', '77777', 777, 35000),
-(27, 74, '6666666666666666', '66666', 666, 21000),
-(29, 76, '0000000000000000', '00000', 0, 14000),
-(30, 77, '0000000000000000', '00000', 0, 15000);
 
 -- --------------------------------------------------------
 
@@ -167,11 +144,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`FNAME`, `LNAME`, `EMAIL`, `LIC_NUM`, `PHONE_NUMBER`, `PASSWORD`, `GENDER`) VALUES
-('anshul', 'chaurasiya', 'adminnnn@gmail.com', '0000000000000000000000', 6266842027, 'abb6df260d1983b730c31f456b4c70d2', 'male'),
-('Anil', 'Sahu', 'anil@gmail.com', '000000000', 6266842027, '0f26fea4eb597a10551d2129adbbc783', 'male'),
-('anshul', 'chaurasiya', 'anshulchaurasiya05@gmail.com', '7898593342', 6266842027, 'abb6df260d1983b730c31f456b4c70d2', 'male'),
-('anshul', 'chaurasiya', 'anshulchaurasiya123456789@gmail.com', '000000000000', 6266842027, 'abb6df260d1983b730c31f456b4c70d2', 'male'),
-('anshul', 'chaurasiya', 'demo@gmail.com', '7898593342', 6266842027, 'abb6df260d1983b730c31f456b4c70d2', 'male');
+('Anshul', 'Chaurasiya', 'anshulchaurasiya05@gmail.com', '000000000', 8964049390, 'e50838e2bd690b2081027214515d7ff4', 'male');
 
 --
 -- Indexes for dumped tables
@@ -231,7 +204,7 @@ ALTER TABLE `booking`
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `CAR_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `CAR_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `feedback`

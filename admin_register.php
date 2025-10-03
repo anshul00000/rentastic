@@ -12,11 +12,23 @@
   <!-- <link  rel="stylesheet" href="mycss/style.css"> -->
    <link  rel="stylesheet" href="mycss/navbar_.css">
    <link rel="stylesheet" href="mycss/booking_.css">
- 
-
-
-
-
+   <style>
+    .back{
+    position: absolute;
+    left: 5px ;
+    top: 10px;
+    width: 150px;
+    height: 40px;   
+  background: aqua;
+    border:none;
+    /* margin-top: 0px; */
+    /* margin-left:1300px; */
+    /* font-size: 18px; */
+    /* border-radius: 10px; */
+    cursor: pointer;
+    color:var(--textcolor);
+}
+   </style>
 </head>
 
 <?php 
@@ -69,15 +81,7 @@ if(isset($_POST['submit']))
                 $sql="insert into admin (ADMIN_ID,ADMIN_PASSWORD,NAME,EMAIL,PHONE,ADDRESS) values('$id','$password','$name','$email',$phone,'$address')";
                 $result = mysqli_query($con,$sql);
 
-                
-
-
             }
-
-
-       
-        
-  
         if($result){
             echo '<script>alert("Registration Successful Press ok to login")</script>';
             echo '<script> window.location.href = "adminlogin.php";</script>';       
@@ -85,10 +89,7 @@ if(isset($_POST['submit']))
         else{
             echo '<script>alert("please check the connection")</script>';
         }
-
-    
         }
-
         }
         else{
             echo '<script>alert("PASSWORD DID NOT MATCH")</script>';
@@ -96,31 +97,15 @@ if(isset($_POST['submit']))
         }
     }
 }
-
-    
-       
     ?>
 
 <body >
- 
-
-
- 
-
-
-
-
+  <a href="adminlogin.php"><button class="back">Go To Login</button></a>
 
          <div class="main"> 
-        
         <div class="register">
             <h2>Admin Register </h2>
-         
-
-
-
-
-
+       
             <form  class="row g-3 ps-5 pe-5"  method="POST"  >
   <div class="col-md-6">
     <label  for="" class="form-label">Email-id :</label>
@@ -162,26 +147,10 @@ if(isset($_POST['submit']))
     <button type="submit"  value="submit" name="submit" class="btn btn-primary btnn">Submit</button>
   </div>
 </form>
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </div>
     
-    
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
    
-    
 </body>
-
-
-
 </html>

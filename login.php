@@ -254,12 +254,10 @@ if(isset($_POST['regs']))
 
 
 <div class="main_form">
-    <!-- <span class="user_login"> <a class="btn" href="adminlogin.php">adminlogin</a></span> -->
-
+    <span class="user_login"> <a class="btn" href="adminlogin.php">adminlogin</a></span>
         <div class="container">
           <div class="forms-container">
             <div class="signin-signup">
-
               <form method="POST"  class="sign-in-form login_form" >
                 <h2 class="title">Sign in</h2>
                 <div class="input-field">
